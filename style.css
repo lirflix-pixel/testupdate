@@ -1585,3 +1585,200 @@ body {
     font-size: 13px;
   }
 }
+ .container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        /* PLAYER */
+        .player-box {
+            width: 100%;
+            background: #1b2432;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 35px;
+        }
+
+        .player-box iframe {
+            width: 100%;
+            height: 420px;
+            border: none;
+            border-radius: 12px;
+        }
+
+        /* NAVIGATION ÉPISODES */
+        .nav-episodes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .nav-btn {
+            background: #1b2432;
+            padding: 12px 22px;
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.25s;
+        }
+
+        .nav-btn:hover {
+            background: #22d3ee;
+            color: #000;
+        }
+
+        /* BOUTON ACCUEIL + RETOUR */
+        .bottom-nav {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .bottom-nav a {
+            display: inline-block;
+            background: #1b2432;
+            padding: 12px 24px;
+            border-radius: 12px;
+            margin: 8px;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.25s;
+        }
+
+        .bottom-nav a:hover {
+            background: #22d3ee;
+            color: #000;
+        }
+.btn-nav {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 22px;
+    background: #1b2432;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-nav:hover {
+    background: #243447;
+}
+.nav-episodes {
+    text-align: center;
+    margin-top: 25px;
+}
+.episode-card img {
+    height: 140px;
+}
+.episode-card {
+    padding: 8px;
+}
+/* GRID ÉPISODES – Taille moyenne */
+.episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Card épisode */
+.episode-card {
+    background: #1b2432;
+    border-radius: 14px;
+    padding: 8px;
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.episode-card:hover {
+    transform: scale(1.05);
+    background: #243447;
+}
+
+/* Image de l’épisode */
+.episode-card img {
+    width: 100%;
+    height: 140px;      /* Taille moyenne idéale */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/* Titre épisode */
+.episode-card span {
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;         /* Blanc */
+    text-decoration: none;
+}
+/* 🌙 OPTIMISATION MOBILE */
+@media (max-width: 600px) {
+
+    /* Réduit la marge générale */
+    .container {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    /* Header en colonne */
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    /* Image plus petite mais lisible */
+    .header img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Badge prochain épisode plus petit */
+    .next-ep {
+        font-size: 13px;
+        padding: 8px 12px;
+        border-radius: 20px;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    /* Cards plus petites + grille adaptée */
+    .episodes-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes propres */
+        gap: 15px;
+    }
+
+    .episode-card img {
+        height: 90px;      /* Réduction de la hauteur */
+    }
+
+    .episode-card span {
+        font-size: 14px;   /* Texte plus compact */
+    }
+}
+/* 🌙 OPTIMISATION TEXTE DESCRIPTIF SUR MOBILE */
+@media (max-width: 600px) {
+
+    .header-text {
+        font-size: 14px;       /* plus petit */
+        line-height: 1.4;      /* lisibilité */
+        text-align: center;    /* centré pour mobile */
+        padding: 0 10px;       /* marge intérieure */
+        margin-top: 10px;
+    }
+
+    .header-text p {
+        margin-bottom: 12px;   /* espace sous le texte */
+    }
+}
