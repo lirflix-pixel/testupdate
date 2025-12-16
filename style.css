@@ -1838,3 +1838,19 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed; /* Assure que si une image est là, elle ne se décale pas */
 }
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* IMAGE ÉMISSION */
+.emission-cover {
+  width: 100%;
+  max-width: 520px;
+  height: auto;            /* 🔥 IMPORTANT */
+  object-fit: contain;     /* 🔥 IMAGE ENTIÈRE */
+  border-radius: 14px;
+  margin: 0 auto;
+  background: #000;
+}
