@@ -102,19 +102,19 @@ async function loadEmissionPage() {
 
       <div class="episodes-grid">
   `;
-
+  const isLatest = ep.number === Math.max(...show.episodes.map(e => e.number));
   [...show.episodes].reverse().forEach(ep => {
+    const isLatest = ep.number === latestEpisodeNumber;
     ep.parts.forEach((part, index) => {
       html += `
-    <a class="episode-card"
-    href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
+  <a class="episode-card"
+     href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
+     
+    ${isLatest ? `<div class="latest-badge">NOUVEAU</div>` : ``}
+
     <img src="${part.thumbnail}" alt="">
-    <span>
-    ${ep.parts.length > 1
-      ? `Épisode ${ep.number} – Partie ${index + 1}`
-      : `Épisode ${ep.number}`}
-  </span>
-</a>
+    <span>Épisode ${ep.number}</span>
+  </a>
 `;
 
     });
