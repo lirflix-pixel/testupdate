@@ -17,7 +17,7 @@
       {
         "number": 2,
         "parts": [
-          { "title": "Épisode 2 Partie 1", "thumbnail": "images/express.jpg", "url": "episodes/pekin-ep2-1.html" },
+          { "title": "Épisode 2 Partie 1", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/dj7j2qyi905n'allowfullscreen></iframe>" },
           { "title": "Épisode 2 Partie 2", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/i9jzaxk9p9mu'allowfullscreen></iframe>" }
         ]
       }
