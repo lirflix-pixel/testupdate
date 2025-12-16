@@ -166,11 +166,11 @@ async function loadEpisodePage() {
 
   html += `
     <div class="container">
-      <h1>${show.title} — Épisode ${epNumber} · Partie ${partNumber}</h1>
+      <h1>${show.title} — Épisode ${epNumber}
+      ${episode.parts.length > 1 ? `· Partie ${partNumber} `: ``}</h1>
       ${embedHtml}
       <div class="nav-episodes">
   `;
-
 
 // ⬅️ PRÉCÉDENT
 if (partNumber > 1) {
