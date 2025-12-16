@@ -1969,3 +1969,66 @@ body {
   }
 
 }
+/* Desktop uniquement */
+@media screen and (min-width: 1024px) {
+  .episode-card {
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.02)
+    );
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .episode-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .episode-card span {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-top: 10px;
+    display: block;
+  }
+}
+/* ===== BADGE NOUVEAU ===== */
+.episode-card {
+  position: relative;
+}
+
+.latest-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, #22d3ee, #38bdf8);
+  color: #001018;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  z-index: 5;
+  box-shadow: 0 6px 20px rgba(34,211,238,0.6);
+  text-transform: uppercase;
+}
+/* ===== DIFFÉRENCE VISUELLE PC ===== */
+@media (min-width: 1024px) {
+  .episode-card {
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .episode-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+  }
+
+  /* Dernier épisode encore plus visible */
+  .episode-card:has(.latest-badge) {
+    outline: 2px solid #22d3ee;
+    box-shadow: 0 0 0 6px rgba(34,211,238,0.15);
+  }
+}
