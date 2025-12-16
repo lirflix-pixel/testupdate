@@ -28,9 +28,17 @@ async function loadEmissionPage() {
             <h1>${show.title}</h1>
 
             <div class="header">
-                <img src="${show.image}" alt="">
-                <div class="header-text">${show.description}</div>
+                <img src="${show.image}" alt="" class="emission-cover">
+
+                <div class="next-episode">
+                😎 Prochain épisode : Dans 2 jours (samedi) à 15:00
+                </div>
+
+                <div class="header-text">
+                ${show.description}
+                </div>
             </div>
+
 
             <div class="episodes-grid">
     `;
