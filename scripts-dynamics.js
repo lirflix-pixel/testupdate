@@ -70,9 +70,7 @@ function getNextEpisodeText(airDay, airTime) {
    PAGE ÉMISSION
 ================================================== */
 async function loadEmissionPage() {
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug");
-
+  const slug = new URLSearchParams(window.location.search).get("slug");
   const shows = await getShows();
   const show = shows[slug];
 
@@ -82,47 +80,49 @@ async function loadEmissionPage() {
   }
 
   document.title = show.title;
-  const sortedEpisodes = [...show.episodes]
-  .filter(e => typeof e.number === "number")
-  .sort((a, b) => b.number - a.number);
 
-const latestEpisodeNumber = sortedEpisodes.length
-  ? sortedEpisodes[0].number
-  : null;
-      let html = `
-      <div class="container">
+  // 🔥 Trier les épisodes du plus récent au plus ancien
+  const sortedEpisodes = [...show.episodes]
+    .filter(e => typeof e.number === "number")
+    .sort((a, b) => b.number - a.number);
+
+  const latestEpisodeNumber = sortedEpisodes.length
+    ? sortedEpisodes[0].number
+    : null;
+
+  let html = `
+    <div class="container">
       <h1>${show.title}</h1>
 
       <div class="show-header">
-      <img class="show-cover" scr="${show.image}" alt="${show.title}">
-      <div class="show-info">
-      <p>${show.description}</p>
+        <img class="show-cover" src="${show.image}" alt="${show.title}">
+        <div class="show-info">
+          <p>${show.description}</p>
+        </div>
       </div>
-      </div>
-      
+
       <div class="episodes-grid">
+  `;
+
+  sortedEpisodes.forEach(ep => {
+    ep.parts.forEach((part, index) => {
+      const isLatest = ep.number === latestEpisodeNumber && index === 0;
+
+      html += `
+        <a class="episode-card ${isLatest ? "latest" : ""}"
+           href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
+          
+          ${isLatest ? `<div class="latest-badge">NOUVEAU</div>` : ""}
+
+          <img src="${part.thumbnail}" alt="">
+          <span>Épisode ${ep.number}</span>
+        </a>
       `;
-    
-      sortedEpisodes.forEach(ep => {
-  ep.parts.forEach((part, index) => {
-
-    const isLatest = ep.number === latestEpisodeNumber && index === 0;
-
-    html += `
-      <a class="episode-card"
-         href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
-
-        ${isLatest ? `<div class="latest-badge">NOUVEAU</div>` : ``}
-
-        <img src="${part.thumbnail}" alt="">
-        <span>Épisode ${ep.number}</span>
-      </a>
-    `;
+    });
   });
-});
+
   html += `
       </div>
-
       <div class="back-home">
         <a href="index.html" class="home-btn">🏠 Accueil</a>
       </div>
