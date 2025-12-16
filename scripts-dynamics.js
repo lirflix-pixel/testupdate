@@ -93,6 +93,13 @@ const latestEpisodeNumber = sortedEpisodes.length
       <div class="container">
       <h1>${show.title}</h1>
 
+      <div class="show-header">
+      <img class="show-cover" scr="${show.image}" alt="${show.title}">
+      <div class="show-info">
+      <p>${show.description}</p>
+      </div>
+      </div>
+      
       <div class="episodes-grid">
       `;
     
