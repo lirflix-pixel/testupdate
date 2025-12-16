@@ -73,7 +73,7 @@ let html = `
         <p class="show-description">${show.description}</p>
         ${show.air_day && show.air_time ? `
             <div class="next-episode-badge">
-            🧊 Prochain épisode : ${getNextEpisodeText(show.air_day, show.air_time)}
+            😎 Prochain épisode : ${getNextEpisodeText(show.air_day, show.air_time)}
         </div>
 ` : ``}
       </div>
