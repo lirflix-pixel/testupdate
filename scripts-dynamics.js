@@ -23,11 +23,12 @@ function getNextEpisodeText(airDay, airTime) {
   const next = new Date(now);
   next.setHours(...airTime.split(":"), 0, 0);
 
-  const diffDays =
-    (targetDay - now.getDay() + 7) % 7 || 7;
-    if (diffDays === 0 && next <= now) {
-  diffDays = 7;
-}
+  let diffDays = (targetDay - now.getDay() + 7) % 7;
+
+  // Si c'est aujourd'hui mais l'heure est déjà passée → semaine suivante
+  if (diffDays === 0 && next <= now) {
+    diffDays = 7;
+  }
 
   next.setDate(now.getDate() + diffDays);
 
@@ -39,8 +40,8 @@ function getNextEpisodeText(airDay, airTime) {
     `dans ${daysLeft} jours`;
 
   const frDays = [
-    "dimanche", "lundi", "mardi", "mercredi",
-    "jeudi", "vendredi", "samedi"
+    "dimanche", "lundi", "mardi",
+    "mercredi", "jeudi", "vendredi", "samedi"
   ];
 
   return `${dayLabel} (${frDays[targetDay]}) à ${airTime}`;
