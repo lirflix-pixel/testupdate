@@ -140,20 +140,25 @@ async function loadEpisodePage() {
     window.location.href = currentPart.url;
     return;
   }
+let embedHtml = "";
 
-  // ✅ IMPORTANT
-  let html = "";
-
-  html += `
-    <div class="container">
-      <h1>${show.title} — Épisode ${epNumber} · Partie ${partNumber}</h1>
-
-      <div class="player-box">
-        <iframe src="${currentPart.url}" allowfullscreen></iframe>
-      </div>
-
-      <div class="nav-episodes">
+if (currentPart.embed) {
+  // embed fourni par le site (hglink, dood, streamtape…)
+  embedHtml = `
+    <div class="player-box">
+      ${currentPart.embed}
+    </div>
   `;
+} 
+else if (currentPart.url) {
+  // ancien cas : lien externe simple
+  window.location.href = currentPart.url;
+  return;
+} 
+else {
+  embedHtml = "<p>Lecteur indisponible</p>";
+}
+
 
   const prevEpisode = show.episodes.find(e => e.number === epNumber - 1);
   const nextEpisode = show.episodes.find(e => e.number === epNumber + 1);
