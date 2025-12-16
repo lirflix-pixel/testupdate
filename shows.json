@@ -10,15 +10,36 @@
       {
         "number": 1,
         "parts": [
-          { "title": "Épisode 1 Partie 1", "thumbnail": "images/express.jpg", "url": "episodes/pekin-ep1-1.html" },
-          { "title": "Épisode 1 Partie 2", "thumbnail": "images/express.jpg", "url": "episodes/pekin-ep1-2.html" }
+          { "title": "Épisode 1 Partie 1", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/b8ojhrk25k74'allowfullscreen></iframe>" },
+          { "title": "Épisode 1 Partie 2", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/tdicau4exbkg'allowfullscreen></iframe>" }
         ]
       },
       {
         "number": 2,
         "parts": [
-          { "title": "Épisode 2 Partie 1", "thumbnail": "images/express.jpg", "url": "episodes/pekin-ep2-1.html" },
-          { "title": "Épisode 2 Partie 2", "thumbnail": "images/express.jpg", "url": "https://hglink.to/e/i9jzaxk9p9mu" }
+          { "title": "Épisode 2 Partie 1", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/dj7j2qyi905n'allowfullscreen></iframe>" },
+          { "title": "Épisode 2 Partie 2", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/i9jzaxk9p9mu'allowfullscreen></iframe>" }
+        ]
+      },
+      {
+        "number": 3,
+        "parts": [
+          { "title": "Épisode 3 Partie 1", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/2ghtv8iqtixm'allowfullscreen></iframe>" },
+          { "title": "Épisode 3 Partie 2", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/3bsqlxc70gne'allowfullscreen></iframe>" }
+        ]
+      },
+      {
+        "number": 4,
+        "parts": [
+          { "title": "Épisode 4 Partie 1", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/hz9ag0rc1jao'allowfullscreen></iframe>" },
+          { "title": "Épisode 4 Partie 2", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/l24usuis52jj'allowfullscreen></iframe>" }
+        ]
+      },
+      {
+        "number": 5,
+        "parts": [
+          { "title": "Épisode 5 Partie 1", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/k0yyvjtbukfk'allowfullscreen></iframe>" },
+          { "title": "Épisode 5 Partie 2", "thumbnail": "images/express.jpg", "embed": "<IFRAME SRC='https://hglink.to/e/uqakpqlweqe4'allowfullscreen></iframe>" }
         ]
       }
     ]
