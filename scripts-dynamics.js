@@ -168,22 +168,41 @@ async function loadEpisodePage() {
       </a>
   `;
 
-// ----- BOUTON PRÉCÉDENT -----
+// ⬅️ PRÉCÉDENT
 if (partNumber > 1) {
-  // même épisode, partie précédente
+  // Partie précédente du même épisode
   html += `
     <a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber - 1}">
       ⬅️ Épisode précédent
     </a>
   `;
 } else {
-  // partie 1 → revenir au dernier part de l'épisode précédent
+  // Dernière partie de l’épisode précédent
   const prevEpisode = show.episodes.find(e => e.number === epNumber - 1);
   if (prevEpisode) {
     const lastPart = prevEpisode.parts.length;
     html += `
       <a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber - 1}&part=${lastPart}">
         ⬅️ Épisode précédent
+      </a>
+    `;
+  }
+}
+// ➡️ SUIVANT
+if (partNumber < episode.parts.length) {
+  // Partie suivante du même épisode
+  html += `
+    <a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber + 1}">
+      Épisode suivant ➡️
+    </a>
+  `;
+} else {
+  // Première partie de l’épisode suivant
+  const nextEpisode = show.episodes.find(e => e.number === epNumber + 1);
+  if (nextEpisode) {
+    html += `
+      <a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber + 1}&part=1">
+        Épisode suivant ➡️
       </a>
     `;
   }
