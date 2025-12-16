@@ -6,29 +6,33 @@ async function getShows() {
 function getNextEpisodeText(airDay, airTime) {
   if (!airDay || !airTime) return null;
 
+  // Nettoyage (super important si y'a des espaces)
+  airDay = String(airDay).trim().toLowerCase();
+  airTime = String(airTime).trim();
+
   const daysMap = {
-    sunday: 0,
-    monday: 1,
-    tuesday: 2,
-    wednesday: 3,
-    thursday: 4,
-    friday: 5,
-    saturday: 6
+    // EN
+    sunday: 0, monday: 1, tuesday: 2, wednesday: 3, thursday: 4, friday: 5, saturday: 6,
+    // FR
+    dimanche: 0, lundi: 1, mardi: 2, mercredi: 3, jeudi: 4, vendredi: 5, samedi: 6,
   };
 
-  const now = new Date();
-  const targetDay = daysMap[airDay.toLowerCase()];
+  const targetDay = daysMap[airDay];
   if (targetDay === undefined) return null;
 
+  const now = new Date();
+
+  // Sécurité sur l'heure "15:00"
+  const [hh, mm] = airTime.split(":").map(x => parseInt(x, 10));
+  if (Number.isNaN(hh) || Number.isNaN(mm)) return null;
+
   const next = new Date(now);
-  next.setHours(...airTime.split(":"), 0, 0);
+  next.setHours(hh, mm, 0, 0);
 
   let diffDays = (targetDay - now.getDay() + 7) % 7;
 
-  // Si c'est aujourd'hui mais l'heure est déjà passée → semaine suivante
-  if (diffDays === 0 && next <= now) {
-    diffDays = 7;
-  }
+  // Si c'est aujourd'hui mais l'heure est déjà passée -> semaine suivante
+  if (diffDays === 0 && next <= now) diffDays = 7;
 
   next.setDate(now.getDate() + diffDays);
 
@@ -39,10 +43,7 @@ function getNextEpisodeText(airDay, airTime) {
     daysLeft === 1 ? "demain" :
     `dans ${daysLeft} jours`;
 
-  const frDays = [
-    "dimanche", "lundi", "mardi",
-    "mercredi", "jeudi", "vendredi", "samedi"
-  ];
+  const frDays = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
 
   return `${dayLabel} (${frDays[targetDay]}) à ${airTime}`;
 }
