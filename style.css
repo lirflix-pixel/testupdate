@@ -1591,7 +1591,7 @@ body {
 
 /* Assure un fond sombre et une police uniforme pour toute la page */
 body {
-    background-color: #0f1626; /* Noir très sombre, typique des plateformes de streaming */
+    background-color: #0f172a; /* Noir très sombre, typique des plateformes de streaming */
     color: #e0e0e0; /* Texte gris clair */
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -1633,7 +1633,7 @@ img {
     gap: 30px; /* Espace entre les éléments */
     margin-bottom: 40px;
     padding: 20px;
-    background-color: #0f1626; /* Fond légèrement plus clair que le body */
+    background-color: #0f172a; /* Fond légèrement plus clair que le body */
     border-radius: 10px;
     align-items: flex-start; /* Aligne les éléments en haut */
 }
@@ -1670,7 +1670,7 @@ img {
 
 /* Style de la carte d'épisode (le lien <a>) */
 .episode-card {
-    background-color: #242424; /* Fond de la carte */
+    background-color: #0f172a; /* Fond de la carte */
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
