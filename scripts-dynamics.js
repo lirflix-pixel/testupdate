@@ -139,23 +139,20 @@ async function loadEpisodePage() {
     const prevEpisode = show.episodes.find(e => e.number === epNumber - 1);
     const nextEpisode = show.episodes.find(e => e.number === epNumber + 1);
 
-    // EMBED vidéo → tu mettras ton vrai embed dans le JSON
-    const embedHtml = `
-        <div class="player-box">
-            <iframe src="${currentPart.url}" allowfullscreen></iframe>
-        </div>
-    `;
+    const isExternal = currentPart.url.startsWith("http");
+    let embedHtml = "";
+        if (isExternal) {
+  // lien externe → redirection
+        window.location.href = currentPart.url;
+        return;
+        } else {
 
-    let html = `
-        <div class="container">
-
-            <h1>${show.title} — Épisode ${epNumber} · Partie ${partNumber}</h1>
-
-            ${embedHtml}
-
-            <div class="nav-episodes">
-    `;
-
+        embedHtml = `
+    <div class="player-box">
+      <iframe src="${currentPart.url}" allowfullscreen></iframe>
+    </div>
+  `;
+}
     // Bouton PRÉCÉDENT (seulement si épisode > 1)
     if (prevEpisode) {
         html += `
