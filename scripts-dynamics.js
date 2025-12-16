@@ -154,19 +154,6 @@ async function loadEpisodePage() {
       <div class="nav-episodes">
   `;
 
-  if (show.episodes.find(e => e.number === epNumber - 1)) {
-    html += `
-      <a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber - 1}&part=1">
-        ⬅️ Épisode précédent
-      </a>
-    `;
-  }
-
-  html += `
-      <a class="nav-btn" href="emission.html?slug=${slug}">
-        📺 Retour à l’émission
-      </a>
-  `;
 
 // ⬅️ PRÉCÉDENT
 if (partNumber > 1) {
@@ -188,6 +175,12 @@ if (partNumber > 1) {
     `;
   }
 }
+  html += `
+      <a class="nav-btn" href="emission.html?slug=${slug}">
+        📺 Retour à l’émission
+      </a>
+  `;
+
 // ➡️ SUIVANT
 if (partNumber < episode.parts.length) {
   // Partie suivante du même épisode
