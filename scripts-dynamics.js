@@ -92,6 +92,8 @@ const latestEpisodeNumber = sortedEpisodes.length
       let html = `
       <div class="container">
       <h1>${show.title}</h1>
+
+      <div class="episodes-grid">
       `;
     
       sortedEpisodes.forEach(ep => {
