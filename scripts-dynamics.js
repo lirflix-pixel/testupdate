@@ -25,6 +25,9 @@ function getNextEpisodeText(airDay, airTime) {
 
   const diffDays =
     (targetDay - now.getDay() + 7) % 7 || 7;
+    if (diffDays === 0 && next <= now) {
+  diffDays = 7;
+}
 
   next.setDate(now.getDate() + diffDays);
 
