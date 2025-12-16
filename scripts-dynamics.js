@@ -3,6 +3,45 @@ async function getShows() {
     const response = await fetch("data/shows.json");
     return response.json();
 }
+function getNextEpisodeText(airDay, airTime) {
+  if (!airDay || !airTime) return null;
+
+  const daysMap = {
+    sunday: 0,
+    monday: 1,
+    tuesday: 2,
+    wednesday: 3,
+    thursday: 4,
+    friday: 5,
+    saturday: 6
+  };
+
+  const now = new Date();
+  const targetDay = daysMap[airDay.toLowerCase()];
+  if (targetDay === undefined) return null;
+
+  const next = new Date(now);
+  next.setHours(...airTime.split(":"), 0, 0);
+
+  const diffDays =
+    (targetDay - now.getDay() + 7) % 7 || 7;
+
+  next.setDate(now.getDate() + diffDays);
+
+  const daysLeft = Math.ceil((next - now) / (1000 * 60 * 60 * 24));
+
+  const dayLabel =
+    daysLeft === 0 ? "aujourd’hui" :
+    daysLeft === 1 ? "demain" :
+    `dans ${daysLeft} jours`;
+
+  const frDays = [
+    "dimanche", "lundi", "mardi", "mercredi",
+    "jeudi", "vendredi", "samedi"
+  ];
+
+  return `${dayLabel} (${frDays[targetDay]}) à ${airTime}`;
+}
 
 /* --------------------------------------------------
    PAGE ÉMISSION (emission.html)
@@ -32,14 +71,12 @@ let html = `
 
       <div class="show-info">
         <p class="show-description">${show.description}</p>
-
-        ${show.nextEpisode ? `
-          <div class="next-episode-badge">
-            🧊 Prochain épisode : ${show.nextEpisode}
-          </div>
-        ` : ``}
+        ${show.air_day && show.air_time ? `
+            <div class="next-episode-badge">
+            🧊 Prochain épisode : ${getNextEpisodeText(show.air_day, show.air_time)}
+        </div>
+` : ``}
       </div>
-
     </div>
 
     <div class="episodes-grid">
