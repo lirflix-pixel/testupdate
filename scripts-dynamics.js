@@ -82,44 +82,35 @@ async function loadEmissionPage() {
   }
 
   document.title = show.title;
+  const sortedEpisodes = [...show.episodes]
+  .filter(e => typeof e.number === "number")
+  .sort((a, b) => b.number - a.number);
 
-  let html = `
-    <div class="container">
+const latestEpisodeNumber = sortedEpisodes.length
+  ? sortedEpisodes[0].number
+  : null;
+      let html = `
+      <div class="container">
       <h1>${show.title}</h1>
+      `;
+    
+      sortedEpisodes.forEach(ep => {
+  ep.parts.forEach((part, index) => {
 
-      <div class="show-header">
-        <img class="show-cover" src="${show.image}" alt="${show.title}">
-        <div class="show-info">
-          <p class="show-description">${show.description}</p>
+    const isLatest = ep.number === latestEpisodeNumber && index === 0;
 
-          ${show.air_day && show.air_time ? `
-            <div class="next-episode-badge">
-              😎 Prochain épisode : ${getNextEpisodeText(show.air_day, show.air_time)}
-            </div>
-          ` : ""}
-        </div>
-      </div>
+    html += `
+      <a class="episode-card"
+         href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
 
-      <div class="episodes-grid">
-  `;
-  const isLatest = ep.number === Math.max(...show.episodes.map(e => e.number));
-  [...show.episodes].reverse().forEach(ep => {
-    const isLatest = ep.number === latestEpisodeNumber;
-    ep.parts.forEach((part, index) => {
-      html += `
-  <a class="episode-card"
-     href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
-     
-    ${isLatest ? `<div class="latest-badge">NOUVEAU</div>` : ``}
+        ${isLatest ? `<div class="latest-badge">NOUVEAU</div>` : ``}
 
-    <img src="${part.thumbnail}" alt="">
-    <span>Épisode ${ep.number}</span>
-  </a>
-`;
-
-    });
+        <img src="${part.thumbnail}" alt="">
+        <span>Épisode ${ep.number}</span>
+      </a>
+    `;
   });
-
+});
   html += `
       </div>
 
