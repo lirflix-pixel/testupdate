@@ -86,7 +86,7 @@ async function loadEmissionPage() {
       <div class="episodes-grid">
   `;
 
-  show.episodes.forEach(ep => {
+  [...show.episodes].reverse().forEach(ep => {
     ep.parts.forEach((part, index) => {
       html += `
         <a class="episode-card"
