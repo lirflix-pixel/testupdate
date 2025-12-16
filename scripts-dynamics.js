@@ -109,7 +109,8 @@ async function loadEmissionPage() {
         <a class="episode-card"
            href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
           <img src="${part.thumbnail}" alt="">
-          <span>Épisode ${ep.number} — Partie ${index + 1}</span>
+          <span Épisode ${ep.number}
+          ${ep.parts.length > 1 ? ` — Partie ${index + 1}` : ``}</span>
         </a>
       `;
     });
