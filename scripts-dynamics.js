@@ -98,6 +98,12 @@ async function loadEmissionPage() {
         <img class="show-cover" src="${show.image}" alt="${show.title}">
         <div class="show-info">
           <p>${show.description}</p>
+
+          ${show.air_day && show.air_time ? `
+            <div class="next-episode-badge">
+              😎 Prochain épisode : ${getNextEpisodeText(show.air_day, show.air_time)}
+            </div>
+            ` : ""}
         </div>
       </div>
 
