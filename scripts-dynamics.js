@@ -11,9 +11,26 @@ async function getShows() {
 ================================================== */
 function getNextEpisodeText(airDay, airTime) {
   if (!airDay || !airTime) return null;
-
   airDay = String(airDay).trim().toLowerCase();
   airTime = String(airTime).trim();
+
+  if (airDay === "weekdays") {
+  const now = new Date();
+  const day = now.getDay(); // 0 = dimanche, 6 = samedi
+
+  // Si samedi → lundi
+  if (day === 6) {
+    return `lundi à ${airTime}`;
+  }
+
+  // Si dimanche → lundi
+  if (day === 0) {
+    return `lundi à ${airTime}`;
+  }
+
+  // Sinon → demain
+  return `demain à ${airTime}`;
+}
 
   const daysMap = {
     sunday: 0, monday: 1, tuesday: 2, wednesday: 3,

@@ -43,5 +43,186 @@
         ]
       }
     ]
-  }
+  },
+
+"cest-la-famille": {
+  "title": "C’est la famille",
+  "image": "images/clafamille.jpeg",
+  "description": "Plongée dans le quotidien de familles suivies par W9.",
+  "air_day": "weekdays",
+  "air_time": "15:00",
+  "episodes": [
+    {
+      "number": 1,
+      "parts": [
+        {
+          "title": "Épisode 1",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX1\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "parts": [
+        {
+          "title": "Épisode 2",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX2\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "parts": [
+        {
+          "title": "Épisode 3",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX3\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "parts": [
+        {
+          "title": "Épisode 4",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX4\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "parts": [
+        {
+          "title": "Épisode 5",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX5\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "parts": [
+        {
+          "title": "Épisode 6",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX6\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "parts": [
+        {
+          "title": "Épisode 7",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX7\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "parts": [
+        {
+          "title": "Épisode 8",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX8\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "parts": [
+        {
+          "title": "Épisode 9",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX9\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "parts": [
+        {
+          "title": "Épisode 10",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX10\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "parts": [
+        {
+          "title": "Épisode 11",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX11\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "parts": [
+        {
+          "title": "Épisode 12",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX12\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "parts": [
+        {
+          "title": "Épisode 13",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX13\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "parts": [
+        {
+          "title": "Épisode 14",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX14\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "parts": [
+        {
+          "title": "Épisode 15",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX15\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "parts": [
+        {
+          "title": "Épisode 16",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX16\" allowfullscreen></iframe>"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "parts": [
+        {
+          "title": "Épisode 17",
+          "thumbnail": "images/clafamille.jpeg",
+          "embed": "<iframe src=\"https://hglink.to/e/XXXX17\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+ }
 }
+
