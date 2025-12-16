@@ -1854,3 +1854,64 @@ body {
   margin: 0 auto;
   background: #000;
 }
+/* ===== PAGE ÉMISSION ===== */
+
+.show-header {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+/* IMAGE ÉMISSION (NON COUPÉE) */
+.show-cover {
+  width: 320px;
+  max-width: 100%;
+  height: auto;              /* 🔑 empêche le crop */
+  border-radius: 14px;
+  object-fit: contain;       /* 🔑 affiche l’image entière */
+  background: #000;
+}
+
+/* TEXTE + BADGE */
+.show-info {
+  flex: 1;
+}
+
+/* DESCRIPTION */
+.show-description {
+  color: #e5e7eb;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* BADGE PROCHAIN ÉPISODE */
+.next-episode-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #67e8f9, #22d3ee);
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(34,211,238,0.35);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .show-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .show-cover {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .next-episode-badge {
+    margin: 10px auto 0;
+  }
+}

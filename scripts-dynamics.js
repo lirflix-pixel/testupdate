@@ -21,28 +21,29 @@ async function loadEmissionPage() {
 
     // Changer le titre de la page
     document.title = show.title;
+let html = `
+  <div class="container">
 
-    let html = `
-        <div class="container">
+    <h1>${show.title}</h1>
 
-            <h1>${show.title}</h1>
+    <div class="show-header">
 
-            <div class="header">
-                <img src="${show.image}" alt="" class="emission-cover">
+      <img class="show-cover" src="${show.image}" alt="${show.title}">
 
-                <div class="header-text">
-                ${show.description}
-                </div>
+      <div class="show-info">
+        <p class="show-description">${show.description}</p>
 
-                <div class="next-episode">
-                😎 Prochain épisode : Dans 2 jours (samedi) à 15:00
-                </div>
-            </div>
+        ${show.nextEpisode ? `
+          <div class="next-episode-badge">
+            🧊 Prochain épisode : ${show.nextEpisode}
+          </div>
+        ` : ``}
+      </div>
 
+    </div>
 
-            <div class="episodes-grid">
-    `;
-
+    <div class="episodes-grid">
+`;
     // Génération automatique des cards épisodes
     show.episodes.forEach(ep => {
         ep.parts.forEach((part, index) => {
