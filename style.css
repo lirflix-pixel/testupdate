@@ -1915,3 +1915,35 @@ body {
     margin: 10px auto 0;
   }
 }
+/* MOBILE – 2 épisodes par ligne */
+@media (max-width: 768px) {
+  .episodes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+@media (max-width: 768px) {
+
+  .show-description {
+    font-size: 13px;
+    line-height: 1.4;
+    max-height: 3.2em; /* ~2 lignes */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media (max-width: 768px) {
+
+  .next-episode-badge {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    gap: 6px;
+  }
+
+  .next-episode-badge img,
+  .next-episode-badge svg {
+    width: 14px;
+    height: 14px;
+  }
+}
