@@ -10,8 +10,8 @@
       {
         "number": 1,
         "parts": [
-          { "title": "Épisode 1 Partie 1", "thumbnail": "images/express.jpg", "url": "episodes/pekin-ep1-1.html" },
-          { "title": "Épisode 1 Partie 2", "thumbnail": "images/express.jpg", "url": "episodes/pekin-ep1-2.html" }
+          { "title": "Épisode 1 Partie 1", "thumbnail": "images/express.jpg", "embed": "episodes/pekin-ep1-1.html" },
+          { "title": "Épisode 1 Partie 2", "thumbnail": "images/express.jpg", "embed": "episodes/pekin-ep1-2.html" }
         ]
       },
       {
