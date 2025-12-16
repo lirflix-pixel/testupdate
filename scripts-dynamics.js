@@ -106,13 +106,17 @@ async function loadEmissionPage() {
   [...show.episodes].reverse().forEach(ep => {
     ep.parts.forEach((part, index) => {
       html += `
-        <a class="episode-card"
-           href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
-          <img src="${part.thumbnail}" alt="">
-          <span Épisode ${ep.number}
-          ${ep.parts.length > 1 ? ` — Partie ${index + 1}` : ``}</span>
-        </a>
-      `;
+    <a class="episode-card"
+    href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
+    <img src="${part.thumbnail}" alt="">
+    <span>
+    ${ep.parts.length > 1
+      ? `Épisode ${ep.number} – Partie ${index + 1}`
+      : `Épisode ${ep.number}`}
+  </span>
+</a>
+`;
+
     });
   });
 
