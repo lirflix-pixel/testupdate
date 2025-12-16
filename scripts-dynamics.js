@@ -120,61 +120,70 @@ let html = `
    PAGE ÉPISODE (episode.html)
 -------------------------------------------------- */
 async function loadEpisodePage() {
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get("slug");
-    const epNumber = parseInt(params.get("ep"));
-    const partNumber = parseInt(params.get("part"));
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("slug");
+  const epNumber = parseInt(params.get("ep"));
+  const partNumber = parseInt(params.get("part"));
 
-    const shows = await getShows();
-    const show = shows[slug];
+  const shows = await getShows();
+  const show = shows[slug];
+  if (!show) return;
 
-    if (!show) {
-        document.getElementById("episode-content").innerHTML = "<h2>Épisode introuvable</h2>";
-        return;
-    }
+  const episode = show.episodes.find(e => e.number === epNumber);
+  if (!episode) return;
 
-    const episode = show.episodes.find(e => e.number === epNumber);
-    const currentPart = episode.parts[partNumber - 1];
+  const currentPart = episode.parts[partNumber - 1];
+  if (!currentPart) return;
 
-    const prevEpisode = show.episodes.find(e => e.number === epNumber - 1);
-    const nextEpisode = show.episodes.find(e => e.number === epNumber + 1);
+  // 🔗 lien externe → redirection directe
+  if (currentPart.url.startsWith("http")) {
+    window.location.href = currentPart.url;
+    return;
+  }
 
-    const isExternal = currentPart.url.startsWith("http");
-    let embedHtml = "";
-        if (isExternal) {
-  // lien externe → redirection
-        window.location.href = currentPart.url;
-        return;
-        } else {
+  // ✅ IMPORTANT
+  let html = "";
 
-        embedHtml = `
-    <div class="player-box">
-      <iframe src="${currentPart.url}" allowfullscreen></iframe>
+  html += `
+    <div class="container">
+      <h1>${show.title} — Épisode ${epNumber} · Partie ${partNumber}</h1>
+
+      <div class="player-box">
+        <iframe src="${currentPart.url}" allowfullscreen></iframe>
+      </div>
+
+      <div class="nav-episodes">
+  `;
+
+  const prevEpisode = show.episodes.find(e => e.number === epNumber - 1);
+  const nextEpisode = show.episodes.find(e => e.number === epNumber + 1);
+
+  if (prevEpisode) {
+    html += `
+      <a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber - 1}&part=1">
+        ⬅️ Épisode précédent
+      </a>
+    `;
+  }
+
+  html += `
+      <a class="nav-btn" href="emission.html?slug=${slug}">
+        📺 Retour à l’émission
+      </a>
+  `;
+
+  if (nextEpisode) {
+    html += `
+      <a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber + 1}&part=1">
+        Épisode suivant ➡️
+      </a>
+    `;
+  }
+
+  html += `
+      </div>
     </div>
   `;
-}
-    // Bouton PRÉCÉDENT (seulement si épisode > 1)
-    if (prevEpisode) {
-        html += `
-            <a class="nav-btn" 
-                href="episode.html?slug=${slug}&ep=${epNumber - 1}&part=1">
-                ⬅️ Épisode précédent
-            </a>`;
-    }
-
-    html += `
-            <a class="nav-btn" href="emission.html?slug=${slug}">📺 Retour à l'émission</a>
-    `;
-
-    // Bouton SUIVANT
-    if (nextEpisode) {
-        html += `
-            <a class="nav-btn" 
-                href="episode.html?slug=${slug}&ep=${epNumber + 1}&part=1">
-                Épisode suivant ➡️
-            </a>`;
-    }
-
     html += `
             </div>
 
