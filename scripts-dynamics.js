@@ -1,6 +1,7 @@
 /* ==================================================
    CHARGEMENT DES DONNÉES
 ================================================== */
+console.log("✅ scripts-dynamics.js chargé");
 async function getShows() {
   const response = await fetch("data/shows.json");
   return response.json();
@@ -280,4 +281,11 @@ if (partNumber < episode.parts.length) {
 
   document.getElementById("episode-content").innerHTML = html;
 }
+console.log("📌 script arrivé en bas");
 
+if (document.getElementById("content")) {
+  console.log("📌 content trouvé → appel loadEmissionPage()");
+  loadEmissionPage();
+} else {
+  console.log("❌ content introuvable");
+}
