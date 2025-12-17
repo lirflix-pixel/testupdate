@@ -186,8 +186,9 @@ async function loadEmissionPage() {
     </a>
   `;
 });
-
 html += `</div>`;
+
+html += `<div style="background:yellow;padding:20px">TEST VISIBLE</div>`;
 
   html += `
       </div>
