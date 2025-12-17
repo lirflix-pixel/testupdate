@@ -107,7 +107,7 @@ async function loadEmissionPage() {
         </div>
       </div>
 
-      <div class="episodes-grid">
+      <div class="episodes-carousel">
   `;
 
   sortedEpisodes.forEach(ep => {

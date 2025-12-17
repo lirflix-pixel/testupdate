@@ -2026,3 +2026,34 @@ body {
     box-shadow: 0 30px 60px rgba(0,0,0,0.45);
   }
 }
+/* 🎠 CARROUSEL ÉPISODES */
+.episodes-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 12px 4px 20px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+}
+
+.episodes-carousel::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+/* Chaque card */
+.episode-card {
+  flex: 0 0 auto;
+  width: 260px; /* PC */
+  scroll-snap-align: start;
+}
+@media (max-width: 768px) {
+  .episode-card {
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .episode-card {
+    width: 80%;
+  }
+}
