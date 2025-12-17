@@ -1889,8 +1889,8 @@ body {
 /* BADGE PROCHAIN ÉPISODE */
 .next-episode-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #67e8f9, #22d3ee);
-  color: #0f172a;
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
   font-weight: 600;
   font-size: 13px;
   padding: 8px 14px;
@@ -2005,14 +2005,14 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: linear-gradient(135deg, #22d3ee, #38bdf8);
-  color: #001018;
-  font-weight: 800;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff;
+  font-weight: 700;
   font-size: 12px;
-  padding: 6px 10px;
+  padding: 4px 10px;
   border-radius: 999px;
   z-index: 5;
-  box-shadow: 0 6px 20px rgba(34,211,238,0.6);
+  box-shadow: 0 6px 20px rgba(34,197,94,0.6);
   text-transform: uppercase;
 }
 /* ===== DIFFÉRENCE VISUELLE PC ===== */
