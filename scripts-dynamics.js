@@ -111,21 +111,30 @@ async function loadEmissionPage() {
   `;
 
   sortedEpisodes.forEach(ep => {
-    ep.parts.forEach((part, index) => {
-      const isLatest = ep.number === latestEpisodeNumber && index === 0;
+  ep.parts.forEach((part, index) => {
 
-      html += `
-        <a class="episode-card ${isLatest ? "latest" : ""}"
-           href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
-          
-          ${isLatest ? `<div class="latest-badge">NOUVEAU</div>` : ""}
+    const isLatest =
+      ep.number === latestEpisodeNumber && index === 0;
 
-          <img src="${part.thumbnail}" alt="">
-          <span>Épisode ${ep.number}</span>
-        </a>
-      `;
-    });
+    const showPartLabel = ep.parts.length > 1;
+
+    html += `
+      <a class="episode-card"
+         href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
+
+        ${isLatest ? `<div class="latest-badge">NOUVEAU</div>` : ``}
+
+        <img src="${part.thumbnail}" alt="">
+
+        <span>
+          Épisode ${ep.number}
+          ${showPartLabel ? `— Partie ${index + 1}` : ``}
+        </span>
+
+      </a>
+    `;
   });
+});
 
   html += `
       </div>
