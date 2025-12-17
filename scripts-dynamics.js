@@ -166,6 +166,12 @@ async function loadEmissionPage() {
 
 html += `</div>`;
 
+html += `
+<div style="margin:40px 0; padding:20px; background:red; color:white;">
+  TEST DERNIERS AJOUTS
+</div>
+`;
+
   html += `
       </div>
       <div class="back-home">
