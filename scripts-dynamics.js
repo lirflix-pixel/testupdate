@@ -173,6 +173,8 @@ html += `</div>`;
     </div>
   `;
 
+console.log("📦 HTML FINAL:", html);
+
   document.getElementById("content").innerHTML = html;
 }
 
