@@ -133,6 +133,29 @@ async function loadEmissionPage() {
   });
 });
 
+  sortedEpisodes.forEach(ep => {
+  ep.parts.forEach((part, index) => {
+
+    const isLatest =
+      ep.number === latestEpisodeNumber && index === 0;
+
+    const showPartLabel = ep.parts.length > 1;
+
+    html += `
+      <a class="episode-card"
+         href="episode.html?slug=${slug}&ep=${ep.number}&part=${index + 1}">
+
+        ${isLatest ? `<div class="latest-badge">NOUVEAU</div>` : ``}
+
+        <img src="${part.thumbnail}" alt="">
+
+        <span>${part.title ?? `Épisode ${ep.number}`}</span>
+
+      </a>
+    `;
+  });
+});
+
     html += `
       <h2 class="section-title">Derniers ajouts</h2>
       <div class="last-added-carousel">
@@ -165,12 +188,6 @@ async function loadEmissionPage() {
 });
 
 html += `</div>`;
-
-html += `
-<div style="margin:40px 0; padding:20px; background:red; color:white;">
-  TEST DERNIERS AJOUTS
-</div>
-`;
 
   html += `
       </div>
