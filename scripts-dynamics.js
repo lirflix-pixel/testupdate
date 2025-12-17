@@ -133,6 +133,39 @@ async function loadEmissionPage() {
   });
 });
 
+    html += `
+      <h2 class="section-title">Derniers ajouts</h2>
+      <div class="last-added-carousel">
+`;
+    Object.values(shows).forEach(otherShow => {
+  // ❌ on ignore l’émission en cours
+  if (otherShow.slug === slug) return;
+
+  if (!otherShow.episodes || otherShow.episodes.length === 0) return;
+
+  // on prend le dernier épisode
+  const sortedEpisodes = [...otherShow.episodes]
+    .filter(e => typeof e.number === "number")
+    .sort((a, b) => b.number - a.number);
+
+  if (!sortedEpisodes.length) return;
+
+  const lastEp = sortedEpisodes[0];
+  const firstPart = lastEp.parts?.[0];
+  if (!firstPart) return;
+
+  html += `
+    <a class="episode-card small"
+       href="episode.html?slug=${otherShow.slug}&ep=${lastEp.number}&part=1">
+      <img src="${firstPart.thumbnail}" alt="">
+      <span>${otherShow.title}</span>
+      <small>Épisode ${lastEp.number}</small>
+    </a>
+  `;
+});
+
+html += `</div>`;
+
   html += `
       </div>
       <div class="back-home">
