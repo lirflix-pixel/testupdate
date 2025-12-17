@@ -126,10 +126,7 @@ async function loadEmissionPage() {
 
         <img src="${part.thumbnail}" alt="">
 
-        <span>
-          Épisode ${ep.number}
-          ${showPartLabel ? `— Partie ${index + 1}` : ``}
-        </span>
+        <span>${part.title ?? `Épisode ${ep.number}`}</span>
 
       </a>
     `;
