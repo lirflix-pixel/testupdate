@@ -163,7 +163,7 @@ Object.entries(shows).forEach(([otherSlug, otherShow]) => {
        href="episode.html?slug=${otherSlug}&ep=${lastEp.number}&part=1">
       <img src="${firstPart.thumbnail}" alt="">
       <span>${otherShow.title}</span>
-      <small>Épisode ${lastEp.number}</small>
+      <small>${firstPart.title ?? `Épisode ${lastEp.number}`}</small>
     </a>
   `;
 });
