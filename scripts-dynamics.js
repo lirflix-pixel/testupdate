@@ -141,13 +141,13 @@ html += `
       <h2 class="section-title">Derniers ajouts</h2>
       <div class="last-added-carousel">
 `;
-    Object.entries(shows).forEach(([otherSlug, otherShow]) => {
-  // ❌ on ignore l’émission en cours
+Object.entries(shows).forEach(([otherSlug, otherShow]) => {
+
+  // ❌ ignorer l’émission en cours
   if (otherSlug === slug) return;
 
   if (!otherShow.episodes || otherShow.episodes.length === 0) return;
 
-  // on prend le dernier épisode
   const sortedEpisodes = [...otherShow.episodes]
     .filter(e => typeof e.number === "number")
     .sort((a, b) => b.number - a.number);
@@ -160,13 +160,14 @@ html += `
 
   html += `
     <a class="episode-card small"
-       href="episode.html?slug=${otherSlug.slug}&ep=${lastEp.number}&part=1">
+       href="episode.html?slug=${otherSlug}&ep=${lastEp.number}&part=1">
       <img src="${firstPart.thumbnail}" alt="">
       <span>${otherShow.title}</span>
       <small>Épisode ${lastEp.number}</small>
     </a>
   `;
 });
+
 html += `</div>`;
 
   html += `
