@@ -205,14 +205,17 @@ async function loadEpisodePage() {
   let html = "";
 
   /* ---- EMBED / REDIRECTION ---- */
+/* ---- LECTEURS MULTIPLES ---- */
 let embedHtml = "";
 let playersHtml = "";
 
+// 🔥 Si plusieurs lecteurs existent
 if (currentPart.players && currentPart.players.length) {
-  // lecteur par défaut = le premier
+  const firstPlayer = currentPart.players[0];
+
   embedHtml = `
-    <div class="player-box" id="player-box">
-      ${currentPart.players[0].embed}
+    <div class="player-box" id="player-container">
+      ${firstPlayer.embed}
     </div>
   `;
 
@@ -221,15 +224,23 @@ if (currentPart.players && currentPart.players.length) {
       ${currentPart.players.map((p, i) => `
         <button class="player-btn ${i === 0 ? "active" : ""}"
           data-embed='${p.embed.replace(/'/g, "&apos;")}'>
-          ▶️ ${p.name}
+          ${p.name}
         </button>
       `).join("")}
     </div>
   `;
-} else {
+} 
+// 🟡 Ancien format (sécurité)
+else if (currentPart.embed) {
+  embedHtml = `
+    <div class="player-box">
+      ${currentPart.embed}
+    </div>
+  `;
+}
+else {
   embedHtml = "<p>Lecteur indisponible</p>";
 }
-
 
   const episodeTitle =
   currentPart.title ||
@@ -241,6 +252,7 @@ if (currentPart.players && currentPart.players.length) {
     <h1>${show.title} — ${episodeTitle}
     ${episode.parts.length > 1 ? `· Partie ${partNumber}` : ``}</h1>
     ${embedHtml}
+    ${playersHtml}
     <div class="nav-episodes">
   `;
 
@@ -289,7 +301,6 @@ if (partNumber < episode.parts.length) {
     `;
   }
 }
-
   html += `
       </div>
 
