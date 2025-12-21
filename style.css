@@ -2124,4 +2124,31 @@ body {
     0 10px 30px rgba(56, 189, 248, 0.30);
   transform: translateY(-2px);
 }
+.players-list {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0 24px;
+  flex-wrap: wrap;
+}
+
+.player-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.player-btn.active {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  border-color: transparent;
+  color: #001018;
+  font-weight: 600;
+}
+
+.player-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
 

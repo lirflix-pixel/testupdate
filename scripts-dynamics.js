@@ -205,20 +205,31 @@ async function loadEpisodePage() {
   let html = "";
 
   /* ---- EMBED / REDIRECTION ---- */
-  let embedHtml = "";
+let embedHtml = "";
+let playersHtml = "";
 
-  if (currentPart.embed) {
-    embedHtml = `
-      <div class="player-box">
-        ${currentPart.embed}
-      </div>
-    `;
-  } else if (currentPart.url) {
-    window.location.href = currentPart.url;
-    return;
-  } else {
-    embedHtml = "<p>Lecteur indisponible</p>";
-  }
+if (currentPart.players && currentPart.players.length) {
+  // lecteur par défaut = le premier
+  embedHtml = `
+    <div class="player-box" id="player-box">
+      ${currentPart.players[0].embed}
+    </div>
+  `;
+
+  playersHtml = `
+    <div class="players-list">
+      ${currentPart.players.map((p, i) => `
+        <button class="player-btn ${i === 0 ? "active" : ""}"
+          data-embed='${p.embed.replace(/'/g, "&apos;")}'>
+          ▶️ ${p.name}
+        </button>
+      `).join("")}
+    </div>
+  `;
+} else {
+  embedHtml = "<p>Lecteur indisponible</p>";
+}
+
 
   const episodeTitle =
   currentPart.title ||
@@ -287,6 +298,20 @@ if (partNumber < episode.parts.length) {
       </div>
     </div>
   `;
+
+setTimeout(() => {
+  const buttons = document.querySelectorAll(".player-btn");
+  const playerBox = document.getElementById("player-box");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      playerBox.innerHTML = btn.dataset.embed;
+    });
+  });
+}, 0);
+
 
   document.getElementById("episode-content").innerHTML = html;
 }

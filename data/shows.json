@@ -488,7 +488,16 @@
         {
           "title": "Épisode 26",
           "thumbnail": "images/bataille1.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX17\" allowfullscreen></iframe>"
+          "player": [
+            {
+              "name": "Uqload",
+              "embed": "<iframe src=\"https://uqload.bz/embed-q6xzaqm5fhz8.html\" allowfullscreen></iframe>"
+            },
+            {
+              "name": "LuluStream",
+              "embed": "<iframe src=\"https://luluvid.com/e/gnqcnqldb5uw\" allowfullscreen></iframe>"
+            }
+          ]
         }
       ]
     },
@@ -974,204 +983,305 @@
       "number": 1,
       "parts": [
         {
-          "title": "Mardi 25/11",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX1\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 2,
-      "parts": [
-        {
           "title": "Mercredi 26/11",
           "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX2\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 3,
-      "parts": [
-        {
-          "title": "Jeudi 27/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX3\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 4,
-      "parts": [
-        {
-          "title": "Vendredi 28/11",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX4\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 5,
-      "parts": [
-        {
-          "title": "Lundi 01/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX5\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 6,
-      "parts": [
-        {
-          "title": "Mardi 02/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX6\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 7,
-      "parts": [
-        {
-          "title": "Mercredi 03/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX7\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 8,
-      "parts": [
-        {
-          "title": "Jeudi 04/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX8\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 9,
-      "parts": [
-        {
-          "title": "Vendredi 05/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX9\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 10,
-      "parts": [
-        {
-          "title": "Lundi 08/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX10\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 11,
-      "parts": [
-        {
-          "title": "Mardi 09/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX11\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 12,
-      "parts": [
-        {
-          "title": "Mercredi 10/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX12\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 13,
-      "parts": [
-        {
-          "title": "Jeudi 11/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX13\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 14,
-      "parts": [
-        {
-          "title": "Vendredi 12/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX14\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 15,
-      "parts": [
-        {
-          "title": "Lundi 15/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX15\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 16,
-      "parts": [
-        {
-          "title": "Mardi 16/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX16\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 17,
-      "parts": [
-        {
-          "title": "Mercredi 17/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX17\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 18,
-      "parts": [
-        {
-          "title": "Jeudi 18/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX17\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 19,
-      "parts": [
-        {
-          "title": "Vendredi 19/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX17\" allowfullscreen></iframe>"
-        }
-      ]
-    },
-    {
-      "number": 20,
-      "parts": [
-        {
-          "title": "Lundi 22/12",
-          "thumbnail": "images/plb.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX17\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"hglink.to/e/1m40z3g8ovt7\" allowfullscreen></iframe>"
         }
       ]
     }
   ]
- },
+},
+    {
+      "number": 2,
+      "parts": [
+        {
+          "title": "Jeudi 27/11",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"hglink.to/e/59ulsibcvke8\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 3,
+      "parts": [
+        {
+          "title": "Vendredi 28/11",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"hglink.to/e/ii67za3ogpde\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 4,
+      "parts": [
+        {
+          "title": "Lundi 01/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://dumbalag.com/e/716w\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 5,
+      "parts": [
+        {
+          "title": "Mardi 02/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://uasopt.com/e/86uxu1i7vwpb\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 6,
+      "parts": [
+         {
+          "title": "Mercredi 03/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://dumbalag.com/e/arxr4z0x3m3a\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 7,
+      "parts": [
+        {
+          "title": "Jeudi 04/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://cavanhabg.com/e/yfwu9hkgp0jc\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 8,
+      "parts": [
+        {
+          "title": "Vendredi 05/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"hglink.to/e/q0gwfwjl7opz\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 9,
+      "parts": [
+        {
+          "title": "Lundi 08/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"hglink.to/e/w48n1f0w5axp\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 10,
+      "parts": [
+        {
+          "title": "Mardi 09/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"hglink.to/e/nst8g64d3kcu\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 11,
+      "parts": [
+        {
+          "title": "Mercredi 10/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"habg.com/e/zseab9i4tqly\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 12,
+      "parts": [
+        {
+          "title": "Jeudi 11/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"hglink.to/e/9my8yjxsos6l\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 13,
+      "parts": [
+        {
+          "title": "Vendredi 12/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://haxloppd.com/e/qwazzx7jdbdf\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 14,
+      "parts": [
+        {
+          "title": "Lundi 15/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/u4guamkmr7uz\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 15,
+      "parts": [
+        {
+          "title": "Mardi 16/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/hpob7zbnh89j\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 16,
+      "parts": [
+        {
+          "title": "Mercredi 17/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/rvrvevrptjyy\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 17,
+      "parts": [
+        {
+          "title": "Jeudi 18/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/44vcl870g4mg\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 18,
+      "parts": [
+        {
+          "title": "Vendredi 19/12",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/yy5p0jfd6ly8\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 19,
+      "parts": [
+        {
+          "title": "Lundi 05/01",
+          "thumbnail": "images/plb.jpg",
+         "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://cavanhabg.com/e/xgpsovq7zi4m\" allowfullscreen></iframe>"
+        }
+      ]
+    }
+  ]
+},
+    {
+      "number": 20,
+      "parts": [
+        {
+          "title": "Mardi 06/01",
+          "thumbnail": "images/plb.jpg",
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/kw7zc18fgls1\" allowfullscreen></iframe>"
+        }
+      ]
+     }
+    ]
+   }
+  ]
+},
+
 "itc": {
   "title": "Ici Tout Commence",
   "image": "images/ici_tout_commence.jpg",
@@ -1185,203 +1295,304 @@
         {
           "title": "Mardi 25/11",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX1\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://dumbalag.com/e/z4pms1azn83x\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 2,
       "parts": [
         {
           "title": "Mercredi 26/11",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX2\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://cavanhabg.com/e/tpqgfjlmb5rx\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 3,
       "parts": [
         {
           "title": "Jeudi 27/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX3\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/e/aade96inzk0v\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 4,
       "parts": [
         {
           "title": "Vendredi 28/11",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX4\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/e/zaquoz122hp3\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 5,
       "parts": [
         {
           "title": "Lundi 01/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX5\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/e/qt71wyd5o4xd\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 6,
       "parts": [
         {
           "title": "Mardi 02/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX6\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/e/lw48776npbqi\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 7,
       "parts": [
         {
           "title": "Mercredi 03/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX7\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/e/6ek5dvx3ccc5\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 8,
       "parts": [
         {
           "title": "Jeudi 04/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX8\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/e/jmes0ml5hor8\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 9,
       "parts": [
         {
           "title": "Vendredi 05/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX9\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/e/w7mh6hy96ph7\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 10,
       "parts": [
         {
           "title": "Lundi 08/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX10\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/e/0v4ukfptelte\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 11,
       "parts": [
         {
           "title": "Mardi 09/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX11\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/e/p46qtjwujenh\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 12,
       "parts": [
         {
           "title": "Mercredi 10/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX12\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/e/gt8rg11mo9zw\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 13,
       "parts": [
         {
           "title": "Jeudi 11/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX13\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://luluvid.com/e/c3swei7p715p\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 14,
       "parts": [
         {
           "title": "Vendredi 12/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX14\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/c3swei7p715p\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 15,
       "parts": [
         {
           "title": "Lundi 15/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX15\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/c3swei7p715p\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 16,
       "parts": [
         {
           "title": "Mardi 16/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX16\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/pflzbzduy4yj\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 17,
       "parts": [
         {
           "title": "Mercredi 17/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX17\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/f2msv8pptww8\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 18,
       "parts": [
         {
           "title": "Jeudi 18/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX17\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/hnovtenz36cf\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 19,
       "parts": [
         {
           "title": "Vendredi 19/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX17\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "LuluStream",
+            "embed": "<iframe src=\"https://luluvid.com/e/sbqbj0yvhp82\" allowfullscreen></iframe>"
         }
       ]
-    },
+    }
+  ]
+},
     {
       "number": 20,
       "parts": [
         {
           "title": "Lundi 22/12",
           "thumbnail": "images/ici_tout_commence.jpg",
-          "embed": "<iframe src=\"https://hglink.to/e/XXXX17\" allowfullscreen></iframe>"
+          "players": [
+            {
+            "name":  "StreamHg",
+            "embed": "<iframe src=\"https://hglink.to/amjl2kto73r9\" allowfullscreen></iframe>"
         }
-      ]
+       ]
+      }
+     ]
     }
-  ]
- }
+   ]
+  }
 }
+
 
 
 
