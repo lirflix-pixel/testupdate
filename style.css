@@ -2083,3 +2083,24 @@ body {
   min-width: 220px;
   scroll-snap-align: start;
 }
+/* Derniers ajouts – MOBILE ONLY */
+@media (max-width: 768px) {
+
+  .last-added-carousel .episode-card.small {
+    width: 140px;
+    flex: 0 0 140px;
+  }
+
+  .last-added-carousel .episode-card.small img {
+    height: 85px;
+  }
+
+  .last-added-carousel .episode-card.small span {
+    font-size: 13px;
+  }
+
+  .last-added-carousel .episode-card.small small {
+    font-size: 11px;
+  }
+}
+

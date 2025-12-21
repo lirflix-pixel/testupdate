@@ -138,7 +138,7 @@ html += `
   `;
 
     html += `
-      <h2 class="section-title">Derniers ajouts</h2>
+      <h2 class="section-title">Derniers ajouts ✅</h2>
       <div class="last-added-carousel">
 `;
 Object.entries(shows).forEach(([otherSlug, otherShow]) => {
