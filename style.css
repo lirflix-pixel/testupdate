@@ -2103,4 +2103,25 @@ body {
     font-size: 11px;
   }
 }
+/* Bordure bleue style "Prochain épisode" – Derniers ajouts (PC + mobile) */
+.last-added-carousel .episode-card.small {
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.15),
+    0 6px 20px rgba(56, 189, 248, 0.15);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.95),
+    rgba(2, 6, 23, 0.95)
+  );
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+/* Effet hover PC */
+.last-added-carousel .episode-card.small:hover {
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.35),
+    0 10px 30px rgba(56, 189, 248, 0.30);
+  transform: translateY(-2px);
+}
 
