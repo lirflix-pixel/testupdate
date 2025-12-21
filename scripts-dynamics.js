@@ -141,9 +141,9 @@ html += `
       <h2 class="section-title">Derniers ajouts</h2>
       <div class="last-added-carousel">
 `;
-    Object.values(shows).forEach(otherShow => {
+    Object.entries(shows).forEach(([otherSlug, otherShow]) => {
   // ❌ on ignore l’émission en cours
-  if (otherShow.slug === slug) return;
+  if (otherSlug === slug) return;
 
   if (!otherShow.episodes || otherShow.episodes.length === 0) return;
 
@@ -160,7 +160,7 @@ html += `
 
   html += `
     <a class="episode-card small"
-       href="episode.html?slug=${otherShow.slug}&ep=${lastEp.number}&part=1">
+       href="episode.html?slug=${otherSlug.slug}&ep=${lastEp.number}&part=1">
       <img src="${firstPart.thumbnail}" alt="">
       <span>${otherShow.title}</span>
       <small>Épisode ${lastEp.number}</small>
