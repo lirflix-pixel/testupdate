@@ -220,12 +220,17 @@ async function loadEpisodePage() {
     embedHtml = "<p>Lecteur indisponible</p>";
   }
 
+  const episodeTitle =
+  currentPart.title ||
+  episode.title ||
+  `Épisode ${epNumber}`;
+
   html += `
-    <div class="container">
-      <h1>${show.title} — Épisode ${epNumber}
-      ${episode.parts.length > 1 ? `· Partie ${partNumber} `: ``}</h1>
-      ${embedHtml}
-      <div class="nav-episodes">
+  <div class="container">
+    <h1>${show.title} — ${episodeTitle}
+    ${episode.parts.length > 1 ? `· Partie ${partNumber}` : ``}</h1>
+    ${embedHtml}
+    <div class="nav-episodes">
   `;
 
 // ⬅️ PRÉCÉDENT
