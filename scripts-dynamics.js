@@ -133,6 +133,9 @@ async function loadEmissionPage() {
     `;
   });
 });
+html += `
+    </div>
+  `;
 
     html += `
       <h2 class="section-title">Derniers ajouts</h2>
