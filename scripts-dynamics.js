@@ -204,43 +204,45 @@ async function loadEpisodePage() {
 
   let html = "";
 
-  /* ---- EMBED / REDIRECTION ---- */
-/* ---- LECTEURS MULTIPLES ---- */
 let embedHtml = "";
-let playersHtml = "";
 
-// 🔥 Si plusieurs lecteurs existent
-if (currentPart.players && currentPart.players.length) {
+// ✅ CAS MULTI-LECTEURS
+if (currentPart.players && currentPart.players.length > 0) {
+
   const firstPlayer = currentPart.players[0];
 
   embedHtml = `
-    <div class="player-box" id="player-container">
-      ${firstPlayer.embed}
+    <div class="player-box">
+      <div class="player-tabs">
+        ${currentPart.players.map((p, i) => `
+          <button 
+            class="player-tab ${i === 0 ? "active" : ""}" 
+            data-embed="${encodeURIComponent(p.embed)}">
+            ${p.name}
+          </button>
+        `).join("")}
+      </div>
+
+      <div class="player-frame">
+        ${firstPlayer.embed}
+      </div>
     </div>
   `;
 
-  playersHtml = `
-    <div class="players-list">
-      ${currentPart.players.map((p, i) => `
-        <button class="player-btn ${i === 0 ? "active" : ""}"
-          data-embed='${p.embed.replace(/'/g, "&apos;")}'>
-          ${p.name}
-        </button>
-      `).join("")}
-    </div>
-  `;
-} 
-// 🟡 Ancien format (sécurité)
-else if (currentPart.embed) {
+// ✅ ANCIEN FORMAT (1 seul embed)
+} else if (currentPart.embed) {
+
   embedHtml = `
     <div class="player-box">
       ${currentPart.embed}
     </div>
   `;
-}
-else {
+
+// ❌ RIEN DU TOUT
+} else {
   embedHtml = "<p>Lecteur indisponible</p>";
 }
+
 
   const episodeTitle =
   currentPart.title ||
@@ -325,6 +327,15 @@ setTimeout(() => {
 
 
   document.getElementById("episode-content").innerHTML = html;
+document.querySelectorAll(".player-tab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".player-tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const embed = decodeURIComponent(btn.dataset.embed);
+    document.querySelector(".player-frame").innerHTML = embed;
+  });
+});
 }
 console.log("📌 script arrivé en bas");
 
