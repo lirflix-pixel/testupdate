@@ -207,43 +207,36 @@ async function loadEpisodePage() {
 let embedHtml = "";
 let playersHtml = "";
 
-// ✅ CAS MULTI-LECTEURS
+// CAS MULTI-LECTEURS
 if (currentPart.players && currentPart.players.length > 0) {
-
-  const firstPlayer = currentPart.players[0];
-
   embedHtml = `
     <div class="player-box">
       <div class="player-tabs">
         ${currentPart.players.map((p, i) => `
-          <button 
-            class="player-tab ${i === 0 ? "active" : ""}" 
+          <button
+            class="player-tab ${i === 0 ? "active" : ""}"
             data-embed="${encodeURIComponent(p.embed)}">
             ${p.name}
           </button>
         `).join("")}
       </div>
 
-      <div class="player-frame">
-        ${firstPlayer.embed}
+      <div class="player-frame" id="player-frame">
+        ${currentPart.players[0].embed}
       </div>
     </div>
   `;
-
-// ✅ ANCIEN FORMAT (1 seul embed)
 } else if (currentPart.embed) {
-
   embedHtml = `
     <div class="player-box">
       ${currentPart.embed}
     </div>
   `;
-
-// ❌ RIEN DU TOUT
 } else {
-  embedHtml = "<p>Lecteur indisponible</p>";
+  embedHtml = `<p>Lecteur indisponible</p>`;
 }
-  const episodeTitle =
+
+const episodeTitle =
   currentPart.title ||
   episode.title ||
   `Épisode ${epNumber}`;
@@ -324,17 +317,19 @@ setTimeout(() => {
   });
 }, 0);
 
-
-  document.getElementById("episode-content").innerHTML = html;
+document.getElementById("episode-content").innerHTML = html;
 document.querySelectorAll(".player-tab").forEach(btn => {
   btn.addEventListener("click", () => {
-    document.querySelectorAll(".player-tab").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".player-tab")
+      .forEach(b => b.classList.remove("active"));
+
     btn.classList.add("active");
 
     const embed = decodeURIComponent(btn.dataset.embed);
-    document.querySelector(".player-frame").innerHTML = embed;
+    document.getElementById("player-frame").innerHTML = embed;
   });
 });
+
 }
 console.log("📌 script arrivé en bas");
 
