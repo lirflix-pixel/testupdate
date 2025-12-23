@@ -2380,3 +2380,13 @@ body {
     margin-top: 25px;
   }
 }
+.nav-stack-link,
+.nav-stack-link:visited,
+.nav-stack-link:hover,
+.nav-stack-link:active {
+  text-decoration: none;
+}
+nav-stack-link {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
