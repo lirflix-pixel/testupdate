@@ -488,7 +488,7 @@
         {
           "title": "Épisode 26",
           "thumbnail": "images/bataille1.jpg",
-          "player": [
+          "players": [
             {
               "name": "Uqload",
               "embed": "<iframe src=\"https://uqload.bz/embed-q6xzaqm5fhz8.html\" allowfullscreen></iframe>"
