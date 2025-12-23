@@ -2299,3 +2299,40 @@ body {
     border-top: 1px solid #333;
     margin: 25px 0;
 }
+/* Container pour centrer le bouton */
+.bottom-home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 50px; /* Espace en bas de page */
+}
+
+/* Style du bouton (sans background blanc) */
+.home-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;            /* Largeur comme sur la photo */
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid #333; /* Bordure sombre fine */
+    border-radius: 8px;    /* Angles légèrement arrondis */
+    text-decoration: none;
+    color: white;          /* Texte en blanc */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+/* Effet au survol */
+.home-btn-container:hover {
+    background: rgba(255, 255, 255, 0.1); /* Léger voile au survol */
+}
+
+/* L'icône maison */
+.home-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;    /* Espace entre l'icône et le texte */
+}
