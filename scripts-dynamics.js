@@ -199,19 +199,35 @@ const html = `
 ${embedHtml}
 
 <div class="nav-episodes">
-${partNumber > 1 ? `
-<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber - 1}">
-⬅️ Épisode précédent
-</a>` : ""}
 
-<a class="nav-btn" href="emission.html?slug=${slug}">
-📺 Retour à l’émission
-</a>
+  ${
+    partNumber > 1
+      ? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber - 1}">
+          ⬅️ Épisode précédent
+        </a>`
+      : show.episodes.find(e => e.number === epNumber - 1)
+        ? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber - 1}&part=1">
+            ⬅️ Épisode précédent
+          </a>`
+        : ""
+  }
 
-${partNumber < episode.parts.length ? `
-<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber + 1}">
-Épisode suivant ➡️
-</a>` : ""}
+  <a class="nav-btn" href="emission.html?slug=${slug}">
+    📺 Retour à l’émission
+  </a>
+
+  ${
+    partNumber < episode.parts.length
+      ? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber + 1}">
+          Épisode suivant ➡️
+        </a>`
+      : show.episodes.find(e => e.number === epNumber + 1)
+        ? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber + 1}&part=1">
+            Épisode suivant ➡️
+          </a>`
+        : ""
+  }
+
 </div>
 
 <div class="back-home">
@@ -236,5 +252,12 @@ decodeURIComponent(tab.dataset.embed);
 /* ==================================================
 AUTO LOAD
 ================================================== */
-if (document.getElementById("content")) loadEmissionPage();
-if (document.getElementById("episode-content")) loadEpisodePage();
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("content")) {
+    loadEmissionPage();
+  }
+
+  if (document.getElementById("episode-content")) {
+    loadEpisodePage();
+  }
+});
