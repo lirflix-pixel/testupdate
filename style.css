@@ -2390,19 +2390,3 @@ nav-stack-link {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
-/* ===== Ajustement titre épisode - MOBILE ===== */
-@media (max-width: 768px) {
-  .show-main-title {
-    margin-top: 24px;        /* le descend un peu */
-    margin-bottom: 18px;     /* respire avec le reste */
-    padding: 0 14px;         /* évite qu’il touche les bords */
-    line-height: 1.35;       /* moins compressé */
-    font-size: 1.45rem;     /* taille équilibrée */
-    text-align: center;
-  }
-}
-@media (max-width: 768px) {
-  .episode-page {
-    padding-top: 10px;
-  }
-}
