@@ -2210,13 +2210,15 @@ body {
 
 /* Gros bouton accueil */
 .big-home-btn {
-    display: block;
-    background: white;
-    color: #1a1a2e;
+    display: inline-block;
+    background: #3e3e3e;
+    color: white;
     text-align: center;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 12px 25px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transition: background-color 0.3s;
 }
