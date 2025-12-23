@@ -147,9 +147,6 @@ document.getElementById("content").innerHTML = html;
 /* ==================================================
 PAGE ÉPISODE (MULTI-LECTEURS)
 ================================================== */
-/* ==================================================
-PAGE ÉPISODE (RENDU VERTICAL)
-================================================== */
 async function loadEpisodePage() {
     const params = new URLSearchParams(window.location.search);
     const slug = params.get("slug");
@@ -192,11 +189,7 @@ async function loadEpisodePage() {
     <div class="container episode-page">
         <h1 class="show-main-title">${show.title} — Épisode ${epNumber}</h1>
         
-        <hr class="separator">
-
         ${playerHtml}
-
-        <hr class="separator">
 
         <div class="vertical-nav">
             ${partNumber > 1 || show.episodes.find(e => e.number === epNumber - 1) 
