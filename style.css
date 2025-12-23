@@ -2222,3 +2222,80 @@ body {
     margin-bottom: 40px;
     transition: background-color 0.3s;
 }
+/* Container de la page */
+.episode-page {
+    text-align: center;
+    color: white;
+}
+
+/* Style des lecteurs (boutons arrondis) */
+.player-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.player-tab-btn {
+    background: #2a2a3a;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.player-tab-btn.active {
+    background: #00adef; /* Le bleu de ta capture */
+}
+
+/* Container vidéo (Embed plus grand) */
+.video-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+/* Pile de boutons verticale */
+.vertical-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espace entre les boutons */
+    margin: 30px 0;
+}
+
+.nav-stack-link {
+    color: #a0b0ff; /* Bleu clair pour les liens */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav-stack-link:hover {
+    text-decoration: underline;
+}
+
+/* Bouton accueil spécial (fond blanc ou gris très clair) */
+.home-btn-special {
+    background: #f0f0f0;
+    color: #1a1a2e;
+    padding: 12px 60px;
+    border-radius: 8px;
+    width: 80%; /* Pour qu'il soit large comme sur l'image */
+    max-width: 300px;
+}
+
+.separator {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 25px 0;
+}

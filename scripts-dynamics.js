@@ -150,7 +150,7 @@ document.getElementById("content").innerHTML = html;
 PAGE ÉPISODE (MULTI-LECTEURS)
 ================================================== */
 /* ==================================================
-PAGE ÉPISODE (MISE EN PAGE STYLE IMAGE)
+PAGE ÉPISODE (RENDU VERTICAL)
 ================================================== */
 async function loadEpisodePage() {
     const params = new URLSearchParams(window.location.search);
@@ -168,10 +168,7 @@ async function loadEpisodePage() {
     const currentPart = episode.parts[partNumber - 1];
     if (!currentPart) return;
 
-    // --- TITRE ET INFOS ---
-    const episodeTitle = currentPart.title || `Épisode ${epNumber}`;
-
-    // --- CONSTRUCTION DU LECTEUR ---
+    // Gestion des lecteurs (Boutons bleus arrondis)
     let playerHtml = "";
     if (currentPart.players && currentPart.players.length > 0) {
         playerHtml = `
@@ -193,44 +190,43 @@ async function loadEpisodePage() {
         playerHtml = `<div class="video-container">${currentPart.embed || "<p>Lecteur indisponible</p>"}</div>`;
     }
 
-    // --- STRUCTURE FINALE (STYLE IMAGE) ---
     const html = `
     <div class="container episode-page">
-        <div class="top-nav">
-            <a href="emission.html?slug=${slug}" class="back-link">⬅️ Retour à l’émission</a>
-        </div>
-
-        <h1 class="show-main-title">${show.title}</h1>
+        <h1 class="show-main-title">${show.title} — Épisode ${epNumber}</h1>
+        
         <hr class="separator">
-        <h2 class="episode-sub-title">Épisode ${epNumber}</h2>
 
         ${playerHtml}
 
         <hr class="separator">
 
-        <div class="episode-nav-bar">
+        <div class="vertical-nav">
             ${partNumber > 1 || show.episodes.find(e => e.number === epNumber - 1) 
-                ? `<a class="nav-link" href="episode.html?slug=${slug}&ep=${partNumber > 1 ? epNumber : epNumber - 1}&part=${partNumber > 1 ? partNumber - 1 : 1}">⬅️ épisode précédent</a>` 
-                : "<span></span>"}
+                ? `<a class="nav-stack-link" href="episode.html?slug=${slug}&ep=${partNumber > 1 ? epNumber : epNumber - 1}&part=${partNumber > 1 ? partNumber - 1 : 1}">
+                    ⬅️ Épisode précédent
+                   </a>` 
+                : ""}
             
-            <a class="nav-link emission-link" href="emission.html?slug=${slug}">📺 Liste des épisodes</a>
+            <a class="nav-stack-link" href="emission.html?slug=${slug}">
+                📺 Retour à l'émission
+            </a>
 
             ${partNumber < episode.parts.length || show.episodes.find(e => e.number === epNumber + 1)
-                ? `<a class="nav-link" href="episode.html?slug=${slug}&ep=${partNumber < episode.parts.length ? epNumber : epNumber + 1}&part=${partNumber < episode.parts.length ? partNumber + 1 : 1}">épisode suivant ➡️</a>` 
-                : "<span></span>"}
-        </div>
+                ? `<a class="nav-stack-link" href="episode.html?slug=${slug}&ep=${partNumber < episode.parts.length ? epNumber : epNumber + 1}&part=${partNumber < episode.parts.length ? partNumber + 1 : 1}">
+                    Épisode suivant ➡️
+                   </a>` 
+                : ""}
 
-        <hr class="separator">
-
-        <div class="bottom-home">
-            <a href="index.html" class="big-home-btn">🏠 Accueil</a>
+            <a class="nav-stack-link home-btn-special" href="index.html">
+                🏠 Accueil
+            </a>
         </div>
     </div>
     `;
 
     document.getElementById("episode-content").innerHTML = html;
 
-    // --- LOGIQUE CLIC LECTEURS ---
+    // Logique Switch Lecteurs
     document.querySelectorAll(".player-tab-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             document.querySelectorAll(".player-tab-btn").forEach(b => b.classList.remove("active"));
