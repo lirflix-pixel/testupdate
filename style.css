@@ -2170,4 +2170,53 @@ body {
   background: #3aa8ff;
   color: #000;
 }
+/* Container vidéo large */
+.video-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
 
+/* Boutons de lecteurs arrondis (style Uqload) */
+.player-tab-btn {
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 20px;
+    border-radius: 25px; /* Très arrondi comme sur la photo */
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.player-tab-btn.active {
+    background: #00adef; /* Bleu ciel comme sur l'image */
+    border-color: #00adef;
+}
+
+/* Barre de navigation horizontale */
+.episode-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+}
+
+.nav-link {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* Gros bouton accueil */
+.big-home-btn {
+    display: block;
+    background: white;
+    color: #1a1a2e;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}

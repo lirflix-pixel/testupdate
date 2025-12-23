@@ -149,93 +149,95 @@ document.getElementById("content").innerHTML = html;
 /* ==================================================
 PAGE ÉPISODE (MULTI-LECTEURS)
 ================================================== */
+/* ==================================================
+PAGE ÉPISODE (MISE EN PAGE STYLE IMAGE)
+================================================== */
 async function loadEpisodePage() {
-const params = new URLSearchParams(window.location.search);
-const slug = params.get("slug");
-const epNumber = parseInt(params.get("ep"));
-const partNumber = parseInt(params.get("part"));
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+    const epNumber = parseInt(params.get("ep"));
+    const partNumber = parseInt(params.get("part"));
 
-const shows = await getShows();
-const show = shows[slug];
-if (!show) return;
+    const shows = await getShows();
+    const show = shows[slug];
+    if (!show) return;
 
-const episode = show.episodes.find(e => e.number === epNumber);
-if (!episode) return;
+    const episode = show.episodes.find(e => e.number === epNumber);
+    if (!episode) return;
 
-const currentPart = episode.parts[partNumber - 1];
-if (!currentPart) return;
+    const currentPart = episode.parts[partNumber - 1];
+    if (!currentPart) return;
 
-// --- GESTION DES BOUTONS DE LECTEURS ---
-let playerInterfaceHtml = "";
+    // --- TITRE ET INFOS ---
+    const episodeTitle = currentPart.title || `Épisode ${epNumber}`;
 
-// Si on a un tableau "players" dans le JSON
-if (currentPart.players && currentPart.players.length > 0) {
-playerInterfaceHtml = `
-<div class="player-container">
-<div class="player-selection">
-<p>Choisir un lecteur :</p>
-<div class="player-tabs">
-${currentPart.players.map((p, i) => `
-<button class="player-btn ${i === 0 ? 'active' : ''}"
-data-embed="${encodeURIComponent(p.embed)}">
-${p.name || `Lecteur ${i + 1}`}
-</button>
-`).join('')}
-</div>
-</div>
-<div class="player-display" id="player-frame">
-${currentPart.players[0].embed}
-</div>
-</div>`;
-}
-// Fallback si on n'a qu'un seul embed direct
-else if (currentPart.embed) {
-playerInterfaceHtml = `<div class="player-display">${currentPart.embed}</div>`;
-} else {
-playerInterfaceHtml = `<p>Aucun lecteur disponible pour cet épisode.</p>`;
-}
+    // --- CONSTRUCTION DU LECTEUR ---
+    let playerHtml = "";
+    if (currentPart.players && currentPart.players.length > 0) {
+        playerHtml = `
+        <div class="player-section">
+            <p class="player-label">Choisir un lecteur :</p>
+            <div class="player-tabs">
+                ${currentPart.players.map((p, i) => `
+                    <button class="player-tab-btn ${i === 0 ? "active" : ""}" 
+                            data-embed="${encodeURIComponent(p.embed)}">
+                        ${p.name}
+                    </button>
+                `).join("")}
+            </div>
+            <div class="video-container" id="player-frame">
+                ${currentPart.players[0].embed}
+            </div>
+        </div>`;
+    } else {
+        playerHtml = `<div class="video-container">${currentPart.embed || "<p>Lecteur indisponible</p>"}</div>`;
+    }
 
-const episodeTitle = currentPart.title || `Épisode ${epNumber}`;
+    // --- STRUCTURE FINALE (STYLE IMAGE) ---
+    const html = `
+    <div class="container episode-page">
+        <div class="top-nav">
+            <a href="emission.html?slug=${slug}" class="back-link">⬅️ Retour à l’émission</a>
+        </div>
 
-const html = `
-<div class="container">
-<div class="episode-header">
-<a href="emission.html?slug=${slug}" class="back-link">⬅ Retour à l'émission</a>
-<h1>${show.title}</h1>
-<h3>${episodeTitle}</h3>
-</div>
+        <h1 class="show-main-title">${show.title}</h1>
+        <hr class="separator">
+        <h2 class="episode-sub-title">Épisode ${epNumber}</h2>
 
-${playerInterfaceHtml}
+        ${playerHtml}
 
-<div class="nav-episodes">
-${partNumber > 1
-? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber - 1}">⬅ Précédent</a>`
-: ""}
+        <hr class="separator">
 
-<a class="nav-btn main-btn" href="emission.html?slug=${slug}">📺 Liste des épisodes</a>
+        <div class="episode-nav-bar">
+            ${partNumber > 1 || show.episodes.find(e => e.number === epNumber - 1) 
+                ? `<a class="nav-link" href="episode.html?slug=${slug}&ep=${partNumber > 1 ? epNumber : epNumber - 1}&part=${partNumber > 1 ? partNumber - 1 : 1}">⬅️ épisode précédent</a>` 
+                : "<span></span>"}
+            
+            <a class="nav-link emission-link" href="emission.html?slug=${slug}">📺 Liste des épisodes</a>
 
-${partNumber < episode.parts.length
-? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber + 1}">Suivant ➡</a>`
-: ""}
-</div>
-</div>
-`;
+            ${partNumber < episode.parts.length || show.episodes.find(e => e.number === epNumber + 1)
+                ? `<a class="nav-link" href="episode.html?slug=${slug}&ep=${partNumber < episode.parts.length ? epNumber : epNumber + 1}&part=${partNumber < episode.parts.length ? partNumber + 1 : 1}">épisode suivant ➡️</a>` 
+                : "<span></span>"}
+        </div>
 
-document.getElementById("episode-content").innerHTML = html;
+        <hr class="separator">
 
-// --- LOGIQUE DE SWITCH DES LECTEURS ---
-const buttons = document.querySelectorAll(".player-btn");
-buttons.forEach(btn => {
-btn.addEventListener("click", () => {
-// Retirer la classe active de tous les boutons
-buttons.forEach(b => b.classList.remove("active"));
-// Ajouter la classe au bouton cliqué
-btn.classList.add("active");
-// Changer l'iframe
-const embedCode = decodeURIComponent(btn.dataset.embed);
-document.getElementById("player-frame").innerHTML = embedCode;
-});
-});
+        <div class="bottom-home">
+            <a href="index.html" class="big-home-btn">🏠 Accueil</a>
+        </div>
+    </div>
+    `;
+
+    document.getElementById("episode-content").innerHTML = html;
+
+    // --- LOGIQUE CLIC LECTEURS ---
+    document.querySelectorAll(".player-tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".player-tab-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            document.getElementById("player-frame").innerHTML = decodeURIComponent(btn.dataset.embed);
+        });
+    });
 }
 
 /* ==================================================
