@@ -2283,57 +2283,67 @@ body {
 .nav-stack-link:hover {
     text-decoration: underline;
 }
+/* ==============================
+   BOUTON ACCUEIL
+============================== */
 
-/* Bouton accueil spécial (fond blanc ou gris très clair) */
-.home-btn-special {
-    background: #f0f0f0;
-    color: #1a1a2e;
-    padding: 12px 60px;
-    border-radius: 8px;
-    width: 80%; /* Pour qu'il soit large comme sur l'image */
-    max-width: 300px;
+.back-home {
+  margin: 40px 0 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.separator {
-    border: 0;
-    border-top: 1px solid #333;
-    margin: 25px 0;
-}
-/* Container pour centrer le bouton */
-.bottom-home {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    padding-bottom: 50px; /* Espace en bas de page */
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 28px;
+  border-radius: 999px;
+
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: #cfefff;
+  background: rgba(20, 90, 160, 0.15);
+
+  border: 1px solid rgba(80, 160, 255, 0.35);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 0 0 rgba(80, 160, 255, 0),
+    inset 0 0 20px rgba(80, 160, 255, 0.15);
+
+  transition: all 0.25s ease;
 }
 
-/* Style du bouton (sans background blanc) */
-.home-btn-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;            /* Largeur comme sur la photo */
-    max-width: 400px;
-    padding: 12px;
-    background: transparent !important;
-    border: 1px solid #ffffff66 !important; /* Bordure sombre fine */
-    border-radius: 8px;    /* Angles légèrement arrondis */
-    text-decoration: none;
-    color: white;          /* Texte en blanc */
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background 0.3s;
+/* Hover PC */
+.home-btn:hover {
+  color: #ffffff;
+  background: rgba(40, 120, 220, 0.25);
+
+  box-shadow:
+    0 0 25px rgba(80, 160, 255, 0.45),
+    inset 0 0 25px rgba(80, 160, 255, 0.25);
+
+  transform: translateY(-1px);
 }
 
-/* Effet au survol */
-.home-btn-container:hover {
-    background: rgba(255, 255, 255, 0.1); /* Léger voile au survol */
+/* Click */
+.home-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 0 15px rgba(80, 160, 255, 0.35),
+    inset 0 0 30px rgba(80, 160, 255, 0.35);
 }
 
-/* L'icône maison */
-.home-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 15px;    /* Espace entre l'icône et le texte */
+/* Mobile */
+@media (max-width: 768px) {
+  .home-btn {
+    font-size: 15px;
+    padding: 12px 24px;
+  }
 }
