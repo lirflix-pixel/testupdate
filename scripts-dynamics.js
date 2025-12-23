@@ -205,6 +205,7 @@ async function loadEpisodePage() {
   let html = "";
 
 let embedHtml = "";
+let playersHtml = "";
 
 // ✅ CAS MULTI-LECTEURS
 if (currentPart.players && currentPart.players.length > 0) {
@@ -242,8 +243,6 @@ if (currentPart.players && currentPart.players.length > 0) {
 } else {
   embedHtml = "<p>Lecteur indisponible</p>";
 }
-
-
   const episodeTitle =
   currentPart.title ||
   episode.title ||
