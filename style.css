@@ -2347,3 +2347,9 @@ body {
     padding: 12px 24px;
   }
 }
+@media screen and (max-width: 768px) {
+  #episode-content h1 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+}
