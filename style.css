@@ -2355,3 +2355,28 @@ body {
     margin-bottom: 14px;
   }
 }
+@media screen and (min-width: 1024px) {
+
+  .vertical-nav {
+    max-width: 900px;
+    margin: 45px auto;
+  }
+
+  /* les 3 premiers boutons en ligne */
+  .vertical-nav .nav-stack-link:not(.home-btn-special) {
+    flex: 1;
+  }
+
+  .vertical-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  /* Accueil seul en dessous, centré */
+  .home-btn-special {
+    width: 100%;
+    justify-content: center;
+    margin-top: 25px;
+  }
+}
