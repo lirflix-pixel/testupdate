@@ -2316,7 +2316,8 @@ body {
     width: 90%;            /* Largeur comme sur la photo */
     max-width: 400px;
     padding: 12px;
-    border: 1px solid #333; /* Bordure sombre fine */
+    background: transparent !important;
+    border: 1px solid #ffffff66 !important; /* Bordure sombre fine */
     border-radius: 8px;    /* Angles légèrement arrondis */
     text-decoration: none;
     color: white;          /* Texte en blanc */
