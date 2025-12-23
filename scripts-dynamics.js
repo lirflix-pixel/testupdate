@@ -49,7 +49,7 @@ daysLeft === 0 ? "aujourd’hui" :
 daysLeft === 1 ? "demain" :
 `dans ${daysLeft} jours`;
 
-const frDays = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"];
+const frDays = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
 return `${label} (${frDays[targetDay]}) à ${airTime}`;
 }
 
@@ -165,86 +165,75 @@ if (!episode) return;
 const currentPart = episode.parts[partNumber - 1];
 if (!currentPart) return;
 
-let embedHtml = "";
+// --- GESTION DES BOUTONS DE LECTEURS ---
+let playerInterfaceHtml = "";
 
-if (currentPart.players?.length) {
-embedHtml = `
-<div class="player-box">
+// Si on a un tableau "players" dans le JSON
+if (currentPart.players && currentPart.players.length > 0) {
+playerInterfaceHtml = `
+<div class="player-container">
+<div class="player-selection">
+<p>Choisir un lecteur :</p>
 <div class="player-tabs">
 ${currentPart.players.map((p, i) => `
-<button class="player-tab ${i === 0 ? "active" : ""}"
+<button class="player-btn ${i === 0 ? 'active' : ''}"
 data-embed="${encodeURIComponent(p.embed)}">
-${p.name}
-</button>`).join("")}
+${p.name || `Lecteur ${i + 1}`}
+</button>
+`).join('')}
 </div>
-<div class="player-frame" id="player-frame">
+</div>
+<div class="player-display" id="player-frame">
 ${currentPart.players[0].embed}
 </div>
-</div>
-`;
-} else if (currentPart.embed) {
-embedHtml = `<div class="player-box">${currentPart.embed}</div>`;
+</div>`;
+}
+// Fallback si on n'a qu'un seul embed direct
+else if (currentPart.embed) {
+playerInterfaceHtml = `<div class="player-display">${currentPart.embed}</div>`;
 } else {
-embedHtml = `<p>Lecteur indisponible</p>`;
+playerInterfaceHtml = `<p>Aucun lecteur disponible pour cet épisode.</p>`;
 }
 
-const episodeTitle =
-currentPart.title ||
-episode.title ||
-`Épisode ${epNumber}`;
+const episodeTitle = currentPart.title || `Épisode ${epNumber}`;
 
 const html = `
 <div class="container">
-<h1>${show.title} — ${episodeTitle}</h1>
-${embedHtml}
-
-<div class="nav-episodes">
-
-  ${
-    partNumber > 1
-      ? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber - 1}">
-          ⬅️ Épisode précédent
-        </a>`
-      : show.episodes.find(e => e.number === epNumber - 1)
-        ? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber - 1}&part=1">
-            ⬅️ Épisode précédent
-          </a>`
-        : ""
-  }
-
-  <a class="nav-btn" href="emission.html?slug=${slug}">
-    📺 Retour à l’émission
-  </a>
-
-  ${
-    partNumber < episode.parts.length
-      ? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber + 1}">
-          Épisode suivant ➡️
-        </a>`
-      : show.episodes.find(e => e.number === epNumber + 1)
-        ? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber + 1}&part=1">
-            Épisode suivant ➡️
-          </a>`
-        : ""
-  }
-
+<div class="episode-header">
+<a href="emission.html?slug=${slug}" class="back-link">⬅ Retour à l'émission</a>
+<h1>${show.title}</h1>
+<h3>${episodeTitle}</h3>
 </div>
 
-<div class="back-home">
-<a href="index.html" class="home-btn">🏠 Accueil</a>
+${playerInterfaceHtml}
+
+<div class="nav-episodes">
+${partNumber > 1
+? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber - 1}">⬅ Précédent</a>`
+: ""}
+
+<a class="nav-btn main-btn" href="emission.html?slug=${slug}">📺 Liste des épisodes</a>
+
+${partNumber < episode.parts.length
+? `<a class="nav-btn" href="episode.html?slug=${slug}&ep=${epNumber}&part=${partNumber + 1}">Suivant ➡</a>`
+: ""}
 </div>
 </div>
 `;
 
 document.getElementById("episode-content").innerHTML = html;
 
-/* Switch lecteurs */
-document.querySelectorAll(".player-tab").forEach(tab => {
-tab.addEventListener("click", () => {
-document.querySelectorAll(".player-tab").forEach(b => b.classList.remove("active"));
-tab.classList.add("active");
-document.getElementById("player-frame").innerHTML =
-decodeURIComponent(tab.dataset.embed);
+// --- LOGIQUE DE SWITCH DES LECTEURS ---
+const buttons = document.querySelectorAll(".player-btn");
+buttons.forEach(btn => {
+btn.addEventListener("click", () => {
+// Retirer la classe active de tous les boutons
+buttons.forEach(b => b.classList.remove("active"));
+// Ajouter la classe au bouton cliqué
+btn.classList.add("active");
+// Changer l'iframe
+const embedCode = decodeURIComponent(btn.dataset.embed);
+document.getElementById("player-frame").innerHTML = embedCode;
 });
 });
 }
@@ -253,11 +242,11 @@ decodeURIComponent(tab.dataset.embed);
 AUTO LOAD
 ================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-  if (document.getElementById("content")) {
-    loadEmissionPage();
-  }
-
-  if (document.getElementById("episode-content")) {
-    loadEpisodePage();
-  }
+if (document.getElementById("content")) {
+loadEmissionPage();
+}
+if (document.getElementById("episode-content")) {
+loadEpisodePage();
+}
 });
+
