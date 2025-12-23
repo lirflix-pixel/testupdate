@@ -194,7 +194,7 @@ async function loadEpisodePage() {
 
     const html = `
     <div class="container episode-page">
-        <h1 class="show-main-title">${show.title} — Épisode ${episodeTitle}</h1>
+        <h1 class="show-main-title">${show.title} — ${episodeTitle.replace(/^Épisode\s*/i, "")}</h1>
         
         ${playerHtml}
 

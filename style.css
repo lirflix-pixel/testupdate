@@ -2406,3 +2406,13 @@ nav-stack-link {
     text-align: center;
   }
 }
+@media (max-width: 768px) {
+  .player-section {
+    margin-top: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .show-main-title {
+    letter-spacing: 0.3px;
+  }
+}
