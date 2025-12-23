@@ -163,6 +163,13 @@ async function loadEpisodePage() {
     const currentPart = episode.parts[partNumber - 1];
     if (!currentPart) return;
 
+    const episodeTitle =
+    currentPart.title && currentPart.title.trim() !== ""
+    ? currentPart.title
+    : episode.title && episode.title.trim() !== ""
+    ? episode.title
+    : `Épisode ${epNumber}`;
+
     // Gestion des lecteurs (Boutons bleus arrondis)
     let playerHtml = "";
     if (currentPart.players && currentPart.players.length > 0) {
@@ -187,7 +194,7 @@ async function loadEpisodePage() {
 
     const html = `
     <div class="container episode-page">
-        <h1 class="show-main-title">${show.title} — Épisode ${epNumber}</h1>
+        <h1 class="show-main-title">${show.title} — Épisode ${episodeTitle}</h1>
         
         ${playerHtml}
 
