@@ -233,7 +233,7 @@ if (currentPart.players && currentPart.players.length > 0) {
     </div>
   `;
 } else {
-  embedHtml = <p>Lecteur indisponible</p>;
+  embedHtml = `<p>Lecteur indisponible</p>`;
 }
 
 const episodeTitle =
