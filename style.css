@@ -2151,4 +2151,23 @@ body {
 .player-btn:hover {
   background: rgba(255,255,255,0.15);
 }
+.player-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.player-tab {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #3aa8ff;
+  background: transparent;
+  color: #3aa8ff;
+  cursor: pointer;
+}
+
+.player-tab.active {
+  background: #3aa8ff;
+  color: #000;
+}
 
