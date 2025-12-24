@@ -134,6 +134,7 @@ href="episode.html?slug=${otherSlug}&ep=${lastEp.number}&part=1">
 </a>
 `;
 });
+html += `</div>`
 
 html += `
 <div class="back-home">
