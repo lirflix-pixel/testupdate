@@ -109,6 +109,12 @@ ${isLatest ? `<div class="latest-badge">NOUVEAU</div>` : ""}
 
 html += `</div>`;
 
+html += `
+<div class="back-home">
+    <a href="index.html" class="home-btn">🏠 Accueil</a>
+</div>
+`;
+
 /* Derniers ajouts */
 html += `
 <h2 class="section-title">Derniers ajouts ✅</h2>
@@ -135,11 +141,6 @@ href="episode.html?slug=${otherSlug}&ep=${lastEp.number}&part=1">
 `;
 });
 
-html += `
-<div class="back-home">
-    <a href="index.html" class="home-btn">🏠 Accueil</a>
-</div>
-`;
 
 document.getElementById("content").innerHTML = html;
 }
