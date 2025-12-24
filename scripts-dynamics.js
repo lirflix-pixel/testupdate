@@ -136,9 +136,9 @@ href="episode.html?slug=${otherSlug}&ep=${lastEp.number}&part=1">
 });
 
 html += `
-            <a class="nav-stack-link home-btn-special" href="index.html">
-                🏠 Accueil
-            </a>
+<div class="back-home">
+    <a href="index.html" class="home-btn">🏠 Accueil</a>
+</div>
 `;
 
 document.getElementById("content").innerHTML = html;

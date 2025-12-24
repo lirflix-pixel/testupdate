@@ -2416,3 +2416,29 @@ nav-stack-link {
     letter-spacing: 0.3px;
   }
 }
+.back-home {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 10px;
+}
+
+.home-btn {
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #2dd4bf, #22d3ee);
+  box-shadow: 0 10px 25px rgba(34, 211, 238, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(34, 211, 238, 0.45);
+}
+
+.home-btn:active {
+  transform: scale(0.96);
+}
