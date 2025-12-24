@@ -138,7 +138,7 @@ html += `</div>`
 
 html += `
 <div class="back-home">
-    <a href="index.html" class="home-btn">🏠 Accueil</a>
+    <a href="index.html" class="home-btn"> Retour à l'accueil 🏠</a>
 </div>
 `;
 document.getElementById("content").innerHTML = html;
