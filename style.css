@@ -2441,12 +2441,5 @@ nav-stack-link {
 
   border-radius: 14px;
 
-  border: 1px solid rgba(34, 211, 238, 0.35);
-
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.home-btn:hover {
-  border-color: rgba(34, 211, 238, 0.6);
-  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(34, 211, 238, 0.45);
 }
