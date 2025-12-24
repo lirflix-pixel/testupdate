@@ -2419,54 +2419,34 @@ nav-stack-link {
 .back-home {
   display: flex;
   justify-content: center;
-  margin: 28px 0 10px;
+  margin: 24px 0 10px;
 }
 
 .home-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
 
-  padding: 14px 28px;
-  min-width: 180px;
+  padding: 12px 22px;
+  min-width: 170px;
 
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+  font-size: 0.95rem;
+  font-weight: 500;
 
-  color: #ffffff;
+  color: #e5f7ff;
   text-decoration: none;
 
-  background: linear-gradient(
-    135deg,
-    rgba(34, 211, 238, 0.25),
-    rgba(34, 211, 238, 0.1)
-  );
+  background: rgba(15, 23, 42, 0.6);
 
-  border-radius: 999px;
+  border-radius: 14px;
 
-  border: 1px solid rgba(34, 211, 238, 0.45);
+  border: 1px solid rgba(34, 211, 238, 0.35);
 
-  box-shadow:
-    0 0 0 1px rgba(34, 211, 238, 0.15),
-    0 8px 22px rgba(0, 0, 0, 0.45),
-    inset 0 0 12px rgba(34, 211, 238, 0.25);
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .home-btn:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 0 0 1px rgba(34, 211, 238, 0.4),
-    0 12px 30px rgba(0, 0, 0, 0.6),
-    inset 0 0 14px rgba(34, 211, 238, 0.35);
-}
-
-.home-btn:active {
-  transform: translateY(0);
-  box-shadow:
-    0 0 0 1px rgba(34, 211, 238, 0.3),
-    inset 0 0 10px rgba(34, 211, 238, 0.25);
+  border-color: rgba(34, 211, 238, 0.6);
+  background: rgba(15, 23, 42, 0.8);
 }
